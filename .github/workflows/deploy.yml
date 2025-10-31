@@ -1,35 +1,37 @@
-name: Deploy Hexo Site
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
     branches:
-      - master   # 只要 master 有改动就自动部署
-  workflow_dispatch: # 手动触发按钮
+      - master
+  workflow_dispatch:
+
+# ✅ 关键：给 github-actions[bot] 赋予推送权限
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22.20.0  # 推荐 Node 18（稳定）
-      
-      - name: Install Dependencies
-        run: |
-          npm install
+          node-version: 22.20.0   # 保持与你本地一致
 
-      - name: Generate Static Files
-        run: |
-          npx hexo generate
+      - name: Install dependencies
+        run: npm install
 
-      - name: Deploy to GitHub Pages
+      - name: Build Hexo
+        run: npx hexo generate
+
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
           publish_branch: gh-pages
+          publish_dir: ./public
