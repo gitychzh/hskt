@@ -9,6 +9,8 @@ on:
 # ✅ 关键：给 github-actions[bot] 赋予推送权限
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-deploy:
