@@ -13,11 +13,15 @@ timezone: Asia/Hong_Kong
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://gitychzh.github.io 
-root: /hskt/
+##以下方式适合github pages页面部署
+# url: https://gitychzh.github.io 
+# root: /hskt/
 # permalink: :year/:month/:day/:title/
+##以下方式适合 cloudflare pages 页面部署
+url: https://gitychzh.github.io/hskt
+root: /
+#@ychzh 修改1
 permalink: posts/:abbrlink/
-
 # abbrlink config
 abbrlink:
   alg: crc32 #support crc16(default) and crc32
