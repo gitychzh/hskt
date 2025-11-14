@@ -2,7 +2,7 @@ name: Deploy Hexo to GH-Pages
 
 on:
   push:
-    branches:  # 当推送到main分支时触发，请根据你的仓库默认分支名修改修改来自gitee镜像模式3来自本地更新1
+    branches:  # 当推送到main或master分支时触发，请根据你的仓库默认分支名修改修改来自gitee镜像模式3来自本地更新1
         - main
 jobs:
   build-and-deploy:
@@ -27,10 +27,11 @@ jobs:
       # 3. 安装依赖并构建
       - name: Install and Build
         run: |
-          npm ci --include=dev # 使用ci命令替代install，确保依赖版本与lock文件一致
+          
+          npm install  # 改为 install 以避免依赖锁文件问题
           npx hexo clean # 清理旧文件
           npx hexo generate # 生成静态站点文件
-
+# npm ci --include=dev # 使用ci命令替代install，确保依赖版本与lock文件一致
       # 4. 部署到gh-pages分支
       - name: Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
