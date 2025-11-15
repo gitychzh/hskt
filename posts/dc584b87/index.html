@@ -1,0 +1,1070 @@
+<!DOCTYPE html><html lang="zh-HK" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Butterfly 文檔(二) 主題頁面 | Butterfly</title><meta name="author" content="Jerry"><meta name="copyright" content="Jerry"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Butterfly安裝文檔-主題頁面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Butterfly 文檔(二) 主題頁面">
+<meta property="og:url" content="https://gitychzh.github.io/hskt/posts/dc584b87/">
+<meta property="og:site_name" content="Butterfly">
+<meta property="og:description" content="Butterfly安裝文檔-主題頁面">
+<meta property="og:locale" content="zh_HK">
+<meta property="og:image" content="https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png">
+<meta property="article:published_time" content="2020-05-28T14:34:41.000Z">
+<meta property="article:modified_time" content="2025-11-15T05:39:36.558Z">
+<meta property="article:author" content="Jerry">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="butterfly">
+<meta property="article:tag" content="主題">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Butterfly 文檔(二) 主題頁面",
+  "url": "https://gitychzh.github.io/hskt/posts/dc584b87/",
+  "image": "https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png",
+  "datePublished": "2020-05-28T14:34:41.000Z",
+  "dateModified": "2025-11-15T05:39:36.558Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jerry",
+      "url": "https://gitychzh.github.io/hskt"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://gitychzh.github.io/hskt/posts/dc584b87/"><link rel="preconnect" href="https://jsd.012700.xyz"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><meta name="google-site-verification" content="NdIUXAOVyGnnBhcrip0ksCawbdAzT0hlBZDE9u4jx6k"/><meta name="msvalidate.01" content="567E47D75E8DCF1282B9623AD914701E"/><meta name="baidu-site-verification" content="code-pE5rnuxcfD"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://jsd.012700.xyz/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://jsd.012700.xyz/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到相關內容：${query}","hits_stats":"找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '複製成功',
+    error: '複製失敗',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: Jerry","link":"連結: ","source":"來源: Butterfly","info":"版權屬於作者所有。商業用途請聯絡作者獲得授權，非商業用途請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://jsd.012700.xyz/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加載更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Butterfly 文檔(二) 主題頁面',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="preconnect" href="https://jsd.012700.xyz"><link href="/self/btf.css" rel="stylesheet"><link rel="alternate" href="/atom.xml" title="Butterfly" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 頁面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 圖庫</span></a></li><li><a class="site-page child" href="/talking/"><i class="fa-fw fas fa-comment-dots"></i><span> 說說</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-thumbs-up"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文檔</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/posts/21cfbf15/"><span> 🚀 快速開始</span></a></li><li><a class="site-page child" href="/posts/dc584b87/"><span> 📑 主題頁面</span></a></li><li><a class="site-page child" href="/posts/4aa8abbe/"><span> 🛠 主題配置</span></a></li><li><a class="site-page child" href="/posts/ceeb73f/"><span> ⚔️ 標簽外挂</span></a></li><li><a class="site-page child" href="/posts/98d20436/"><span> ❓ 主題問答</span></a></li><li><a class="site-page child" href="/posts/4073eda/"><span> ⚡️ 進階教程</span></a></li><li><a class="site-page child" href="/posts/198a4240/"><span> ✨ 更新日誌</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-language"></i><span> 語言</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/"><i class="fa-fw fas fa-e"></i><span> English</span></a></li><li><a class="site-page child" href="/"><i class="fa-fw fas fa-c"></i><span> 中文</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Butterfly</span></a><a class="nav-page-title" href="/"><span class="site-name">Butterfly 文檔(二) 主題頁面</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首頁</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 頁面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 歸檔</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 圖庫</span></a></li><li><a class="site-page child" href="/talking/"><i class="fa-fw fas fa-comment-dots"></i><span> 說說</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-thumbs-up"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-book"></i><span> 文檔</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/posts/21cfbf15/"><span> 🚀 快速開始</span></a></li><li><a class="site-page child" href="/posts/dc584b87/"><span> 📑 主題頁面</span></a></li><li><a class="site-page child" href="/posts/4aa8abbe/"><span> 🛠 主題配置</span></a></li><li><a class="site-page child" href="/posts/ceeb73f/"><span> ⚔️ 標簽外挂</span></a></li><li><a class="site-page child" href="/posts/98d20436/"><span> ❓ 主題問答</span></a></li><li><a class="site-page child" href="/posts/4073eda/"><span> ⚡️ 進階教程</span></a></li><li><a class="site-page child" href="/posts/198a4240/"><span> ✨ 更新日誌</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-language"></i><span> 語言</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/en/"><i class="fa-fw fas fa-e"></i><span> English</span></a></li><li><a class="site-page child" href="/"><i class="fa-fw fas fa-c"></i><span> 中文</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Butterfly 文檔(二) 主題頁面<a class="post-edit-link" href="https://github.com/jerryc127/butterfly.js.org/edit/main/source/_posts/Butterfly-文檔-二-主題頁面.md" rel="external nofollow noreferrer" title="編輯" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">發表於</span><time datetime="2020-05-28T14:34:41.000Z" title="發表於 2020-05-28 22:34:41">2020-05-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Docs%E6%96%87%E6%AA%94/">Docs文檔</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字數統計:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時間:</span><span>12分鐘</span></span><span class="post-meta-separator">|</span><span id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">瀏覽量:</span><span id="umamiPV" data-path="/posts/dc584b87/"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p>📚 文檔目錄</p>
+<p><a href="/posts/21cfbf15/" title="Butterfly 文檔(一) 快速開始">🚀 快速開始</a> - <a href="/posts/dc584b87/" title="Butterfly 文檔(二) 主題頁面">📑 主題頁面</a> - <a href="/posts/4aa8abbe/" title="Butterfly 文檔(三) 主題配置">📌 主題配置</a> - <a href="/posts/ceeb73f/" title="Butterfly 文檔(四) 標簽外挂">⚔️ 標簽外掛</a> - <a href="/posts/98d20436/" title="Butterfly 文檔(五) 主題問答">❓ 主題問答</a> - <a href="/posts/4073eda/" title="Butterfly 文檔(六) 進階教程">⚡️ 進階教程</a></p>
+</div>
+
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>你可以通過右下角的 <strong>簡</strong> 按鈕切換為簡體顯示</p>
+</div>
+
+<hr>
+<h2 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h2><p><strong>Front-matter 是 markdown 文件最上方以 <code>---</code> 分隔的區域，用於指定個別檔案的變數。</strong></p>
+<ul>
+<li>Page Front-matter 用於 <code>頁面</code> 配置</li>
+<li>Post Front-matter 用於 <code>文章頁</code> 配置</li>
+</ul>
+<div class="note info flat"><p>如果標注<code>可選</code>的參數，可根據自己需要添加，不用全部都寫在 markdown 裏</p>
+</div>
+
+<h3 id="Page-Front-matter"><a href="#Page-Front-matter" class="headerlink" title="Page Front-matter"></a>Page Front-matter</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">updated:</span><br><span class="line">type:</span><br><span class="line">comments:</span><br><span class="line">description:</span><br><span class="line">keywords:</span><br><span class="line">top<span class="emphasis">_img:</span></span><br><span class="line"><span class="emphasis">mathjax:</span></span><br><span class="line"><span class="emphasis">katex:</span></span><br><span class="line"><span class="emphasis">aside:</span></span><br><span class="line"><span class="emphasis">aplayer:</span></span><br><span class="line"><span class="emphasis">highlight_</span>shrink:</span><br><span class="line">random:</span><br><span class="line">limit:</span><br><span class="line">  type:</span><br><span class="line"><span class="section">  value:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>【必需】頁面標題</td>
+</tr>
+<tr>
+<td>date</td>
+<td>【必需】頁面創建日期</td>
+</tr>
+<tr>
+<td>type</td>
+<td>【必需】標籤、分類和友情鏈接三個頁面需要配置</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>【可選】頁面更新日期</td>
+</tr>
+<tr>
+<td>description</td>
+<td>【可選】頁面描述</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>【可選】頁面關鍵字</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>【可選】顯示頁面評論模塊 (默認 true)</td>
+</tr>
+<tr>
+<td>top_img</td>
+<td>【可選】頁面頂部圖片</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td>【可選】顯示 mathjax (當設置 mathjax 的 per_page: false 時，才需要配置，默認 false)</td>
+</tr>
+<tr>
+<td>katex</td>
+<td>【可選】顯示 katex (當設置 katex 的 per_page: false 時，才需要配置，默認 false)</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>【可選】顯示側邊欄 (默認 true)</td>
+</tr>
+<tr>
+<td>aplayer</td>
+<td>【可選】在需要的頁面加載 aplayer 的 js 和 css,請參考文章下面的<code>音樂</code> 配置</td>
+</tr>
+<tr>
+<td>highlight_shrink</td>
+<td>【可選】配置代碼框是否展開 (true&#x2F;false) (默認為設置中 highlight_shrink 的配置)</td>
+</tr>
+<tr>
+<td>random</td>
+<td>【可選】配置友情鏈接是否隨機排序（默認為 false）</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>【可選】配置説説顯示數量</td>
+</tr>
+<tr>
+<td>limit.type</td>
+<td>【可選】配置説説顯示數量的類型 （date 或者 num）</td>
+</tr>
+<tr>
+<td>limit.value</td>
+<td>【可選】配置説説顯示數量的值</td>
+</tr>
+</tbody></table>
+<h3 id="Post-Front-matter"><a href="#Post-Front-matter" class="headerlink" title="Post Front-matter"></a>Post Front-matter</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:</span><br><span class="line">date:</span><br><span class="line">updated:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">keywords:</span><br><span class="line">description:</span><br><span class="line">top<span class="emphasis">_img:</span></span><br><span class="line"><span class="emphasis">comments:</span></span><br><span class="line"><span class="emphasis">cover:</span></span><br><span class="line"><span class="emphasis">toc:</span></span><br><span class="line"><span class="emphasis">toc_</span>number:</span><br><span class="line">toc<span class="emphasis">_style_</span>simple:</span><br><span class="line">copyright:</span><br><span class="line">copyright<span class="emphasis">_author:</span></span><br><span class="line"><span class="emphasis">copyright_</span>author<span class="emphasis">_href:</span></span><br><span class="line"><span class="emphasis">copyright_</span>url:</span><br><span class="line">copyright<span class="emphasis">_info:</span></span><br><span class="line"><span class="emphasis">mathjax:</span></span><br><span class="line"><span class="emphasis">katex:</span></span><br><span class="line"><span class="emphasis">aplayer:</span></span><br><span class="line"><span class="emphasis">highlight_</span>shrink:</span><br><span class="line">aside:</span><br><span class="line">abcjs:</span><br><span class="line"><span class="section">noticeOutdate:</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">寫法</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">title</td>
+<td>【必需】文章標題</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td>【必需】文章創建日期</td>
+</tr>
+<tr>
+<td align="left">updated</td>
+<td>【可選】文章更新日期</td>
+</tr>
+<tr>
+<td align="left">tags</td>
+<td>【可選】文章標籤</td>
+</tr>
+<tr>
+<td align="left">categories</td>
+<td>【可選】文章分類</td>
+</tr>
+<tr>
+<td align="left">keywords</td>
+<td>【可選】文章關鍵字</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td>【可選】文章描述</td>
+</tr>
+<tr>
+<td align="left">top_img</td>
+<td>【可選】文章頂部圖片</td>
+</tr>
+<tr>
+<td align="left">cover</td>
+<td>【可選】文章縮略圖(如果沒有設置 top_img,文章頁頂部將顯示縮略圖，可設為 false&#x2F;圖片地址&#x2F;留空)</td>
+</tr>
+<tr>
+<td align="left">comments</td>
+<td>【可選】顯示文章評論模塊(默認 true)</td>
+</tr>
+<tr>
+<td align="left">toc</td>
+<td>【可選】顯示文章 TOC(默認為設置中 toc 的 enable 配置)</td>
+</tr>
+<tr>
+<td align="left">toc_number</td>
+<td>【可選】顯示 toc_number(默認為設置中 toc 的 number 配置)</td>
+</tr>
+<tr>
+<td align="left">toc_style_simple</td>
+<td>【可選】顯示 toc 簡潔模式</td>
+</tr>
+<tr>
+<td align="left">copyright</td>
+<td>【可選】顯示文章版權模塊(默認為設置中 post_copyright 的 enable 配置)</td>
+</tr>
+<tr>
+<td align="left">copyright_author</td>
+<td>【可選】文章版權模塊的<code>文章作者</code></td>
+</tr>
+<tr>
+<td align="left">copyright_author_href</td>
+<td>【可選】文章版權模塊的<code>文章作者</code>鏈接</td>
+</tr>
+<tr>
+<td align="left">copyright_url</td>
+<td>【可選】文章版權模塊的<code>文章連結</code>鏈接</td>
+</tr>
+<tr>
+<td align="left">copyright_info</td>
+<td>【可選】文章版權模塊的<code>版權聲明</code>文字</td>
+</tr>
+<tr>
+<td align="left">mathjax</td>
+<td>【可選】顯示 mathjax(當設置 mathjax 的 per_page: false 時，才需要配置，默認 false )</td>
+</tr>
+<tr>
+<td align="left">katex</td>
+<td>【可選】顯示 katex (當設置 katex 的 per_page: false 時，才需要配置，默認 false )</td>
+</tr>
+<tr>
+<td align="left">aplayer</td>
+<td>【可選】在需要的頁面加載 aplayer 的 js 和 css,請參考文章下面的<code>音樂</code> 配置</td>
+</tr>
+<tr>
+<td align="left">highlight_shrink</td>
+<td>【可選】配置代碼框是否展開(true&#x2F;false)(默認為設置中 highlight_shrink 的配置)</td>
+</tr>
+<tr>
+<td align="left">aside</td>
+<td>【可選】顯示側邊欄 (默認 true)</td>
+</tr>
+<tr>
+<td align="left">abcjs</td>
+<td>【可選】加載 abcjs (當設置 abcjs 的 per_page: false 時，才需要配置，默認 false )</td>
+</tr>
+<tr>
+<td align="left">noticeOutdate</td>
+<td>【可選】文章過期提醒 (默認為設置中 noticeOutdate 的 enable 配置)</td>
+</tr>
+</tbody></table>
+<h2 id="標籤頁"><a href="#標籤頁" class="headerlink" title="標籤頁"></a>標籤頁</h2><div class="note info flat"><p>標籤頁文件名不一定是 tags, 例子中的 tags 只是一個示例<br>記得添加 <code>type: &quot;tags&quot;</code></p>
+</div>
+
+<ol>
+<li><p>前往你的 Hexo 的根目錄</p>
+</li>
+<li><p>輸入 <code>hexo new page tags</code></p>
+</li>
+<li><p>你會找到 <code>source/tags/index.md</code> 這個文件</p>
+</li>
+<li><p>修改這個文件：</p>
+</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 標籤</span><br><span class="line">date: 2018-01-05 00:00:00</span><br><span class="line">type: &#x27;tags&#x27;</span><br><span class="line">orderby: random</span><br><span class="line"><span class="section">order: 1</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>【必須】頁面類型，必須為 <code>tags</code></td>
+</tr>
+<tr>
+<td>orderby</td>
+<td>【可選】排序方式 ：</br>random - 隨機排序 &#x2F; name - 標簽名字排序 &#x2F; length - 標簽數量排序</td>
+</tr>
+<tr>
+<td>order</td>
+<td>【可選】排序次序： 1（升序），-1（降序）</td>
+</tr>
+</tbody></table>
+<h2 id="分類頁"><a href="#分類頁" class="headerlink" title="分類頁"></a>分類頁</h2><div class="note info flat"><p>分類頁文件名不一定是 categories, 例子中的 categories 只是一個示例<br>記得添加 <code>type: &quot;categories&quot;</code></p>
+</div>
+
+<ol>
+<li><p>前往你的 Hexo 的根目錄</p>
+</li>
+<li><p>輸入 <code>hexo new page categories</code></p>
+</li>
+<li><p>你會找到 <code>source/categories/index.md</code> 這個文件</p>
+</li>
+<li><p>修改這個文件：</p>
+</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分類</span><br><span class="line">date: 2018-01-05 00:00:00</span><br><span class="line"><span class="section">type: &#x27;categories&#x27;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="友情鏈接"><a href="#友情鏈接" class="headerlink" title="友情鏈接"></a>友情鏈接</h2><p>為你的博客創建一個友情鏈接！</p>
+<h3 id="創建友情鏈接頁面"><a href="#創建友情鏈接頁面" class="headerlink" title="創建友情鏈接頁面"></a>創建友情鏈接頁面</h3><div class="note info flat"><p>友情鏈接頁文件名不一定是 link, 例子中的 link 只是一個示例<br>記得添加 <code>type: &quot;link&quot;</code></p>
+</div>
+
+<ol>
+<li><p>前往你的 Hexo 的根目錄</p>
+</li>
+<li><p>輸入 <code>hexo new page link</code></p>
+</li>
+<li><p>你會找到 <code>source/link/index.md</code> 這個文件</p>
+</li>
+<li><p>修改這個文件：</p>
+</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 友情鏈接</span><br><span class="line">date: 2018-06-07 22:17:49</span><br><span class="line"><span class="section">type: &#x27;link&#x27;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="數據來源"><a href="#數據來源" class="headerlink" title="數據來源"></a>數據來源</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">本地生成</button><button type="button" class="tab">遠程拉取</button></div><div class="tab-contents"><div class="tab-item-content active"><p>在 Hexo 根目錄中的 <code>source/_data</code>（如果沒有 _data 文件夾，請自行創建），創建一個文件 <code>link.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span> <span class="string">友情鏈接</span></span><br><span class="line">  <span class="attr">class_desc:</span> <span class="string">那些人，那些事</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Hexo</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://hexo.io/zh-tw/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">快速、簡單且強大的網誌框架</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">class_name:</span> <span class="string">網站</span></span><br><span class="line">  <span class="attr">class_desc:</span> <span class="string">值得推薦的網站</span></span><br><span class="line">  <span class="attr">link_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Youtube</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://www.youtube.com/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">視頻網站</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Weibo</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://www.weibo.com/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">中國最大社交分享平台</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Twitter</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">https://twitter.com/</span></span><br><span class="line">      <span class="attr">avatar:</span> <span class="string">https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png</span></span><br><span class="line">      <span class="attr">descr:</span> <span class="string">社交分享平台</span></span><br></pre></td></tr></table></figure>
+
+<p><code>class_name</code> 和 <code>class_desc</code> 支持 html 格式書寫，如不需要，也可以留空。</p></div><div class="tab-item-content"><p>從 <code>4.0.0</code> 開始，支持從遠程加載友情鏈接，遠程拉取只支持 <code>json</code>。</p>
+<div class="note warning flat"><p>注意： 選擇遠程加載後，本地生成的方法會無效。</p>
+</div>
+
+<p>在 <code>source/link/index.md</code> 這個文件的 front-matter 添加遠程鏈接</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flink<span class="emphasis">_url: xxxxx</span></span><br></pre></td></tr></table></figure>
+
+<p>Json 的格式</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;class_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;友情鏈接&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;class_desc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;那些人，那些事&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;link_list&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Hexo&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://hexo.io/zh-tw/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;descr&quot;</span><span class="punctuation">:</span> <span class="string">&quot;快速、簡單且強大的網誌框架&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;class_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;網站&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;class_desc&quot;</span><span class="punctuation">:</span> <span class="string">&quot;值得推薦的網站&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;link_list&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Youtube&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://www.youtube.com/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;descr&quot;</span><span class="punctuation">:</span> <span class="string">&quot;視頻網站&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Weibo&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://www.weibo.com/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;descr&quot;</span><span class="punctuation">:</span> <span class="string">&quot;中國最大社交分享平台&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Twitter&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://twitter.com/&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;descr&quot;</span><span class="punctuation">:</span> <span class="string">&quot;社交分享平台&quot;</span></span><br><span class="line">      <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<h3 id="友情鏈接隨機排序"><a href="#友情鏈接隨機排序" class="headerlink" title="友情鏈接隨機排序"></a>友情鏈接隨機排序</h3><p>主題支持友情鏈接隨機排序，只需要在頂部 <code>front-matter</code> 添加 <code>random: true</code></p>
+<h3 id="友情鏈接界面設置"><a href="#友情鏈接界面設置" class="headerlink" title="友情鏈接界面設置"></a>友情鏈接界面設置</h3><p>由 2.2.0 起，友情鏈接界面可以由用户自己自定義，只需要在友情鏈接的 Markdown 檔設置就行，以普通的 Markdown 格式書寫。</p>
+<h2 id="圖庫"><a href="#圖庫" class="headerlink" title="圖庫"></a>圖庫</h2><p>圖庫頁面只是普通的頁面，你只需要 <code>hexo n page xxxxx</code> 創建你的頁面就行</p>
+<p>然後使用標簽外掛 <a href="/posts/ceeb73f/#Gallery-%E7%9B%B8%E5%86%8A%E5%9C%96%E5%BA%AB">galleryGroup</a>，具體用法請查看對應的內容。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&lt;div</span> <span class="string">class=&quot;gallery-group-main&quot;&gt;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">&#x27;壁紙&#x27;</span> <span class="string">&#x27;收藏的一些壁紙&#x27;</span> <span class="string">&#x27;/Gallery/wallpaper&#x27;</span> <span class="string">https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">&#x27;漫威&#x27;</span> <span class="string">&#x27;關於漫威的圖片&#x27;</span> <span class="string">&#x27;/Gallery/marvel&#x27;</span> <span class="string">https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg</span> <span class="string">%</span>&#125;</span><br><span class="line">&#123;<span class="string">%</span> <span class="string">galleryGroup</span> <span class="string">&#x27;OH MY GIRL&#x27;</span> <span class="string">&#x27;關於OH MY GIRL的圖片&#x27;</span> <span class="string">&#x27;/Gallery/ohmygirl&#x27;</span> <span class="string">https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<div class="gallery-group-main">
+<figure class="gallery-group">
+    <img class="gallery-group-img no-lightbox" src="/img/loading.gif" data-lazy-src="https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png" alt="Group Image Gallery">
+    <figcaption>
+      <div class="gallery-group-name">壁紙</div>
+      <p>收藏的一些壁紙</p>
+      <a href='/Gallery/wallpaper'></a>
+    </figcaption>
+  </figure>
+<figure class="gallery-group">
+    <img class="gallery-group-img no-lightbox" src="/img/loading.gif" data-lazy-src="https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg" alt="Group Image Gallery">
+    <figcaption>
+      <div class="gallery-group-name">漫威</div>
+      <p>關於漫威的圖片</p>
+      <a href='/Gallery/marvel'></a>
+    </figcaption>
+  </figure>
+<figure class="gallery-group">
+    <img class="gallery-group-img no-lightbox" src="/img/loading.gif" data-lazy-src="https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg" alt="Group Image Gallery">
+    <figcaption>
+      <div class="gallery-group-name">OH MY GIRL</div>
+      <p>關於OH MY GIRL的圖片</p>
+      <a href='/Gallery/ohmygirl'></a>
+    </figcaption>
+  </figure>
+</div>
+
+<h3 id="子頁面"><a href="#子頁面" class="headerlink" title="子頁面"></a>子頁面</h3><p>子頁面也是普通的頁面，你只需要 <code>hexo n page xxxxx</code> 創建你的頁面就行</p>
+<p>然後使用標簽外掛 <a href="/posts/ceeb73f/#Gallery%E7%9B%B8%E5%86%8A">gallery</a>，具體用法請查看對應的內容。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">gallery</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg)</span></span><br><span class="line"><span class="type">![](https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg)</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endgallery</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg","alt":"","title":""}]</div>
+  </div>
+
+<div class="note pink icon-padding flat"><i class="note-icon fas fa-sitemap"></i><p>如果你想要使用 <code>/photo/ohmygirl</code> 這樣的鏈接顯示你的圖片內容</p>
+<p>你可以把創建好的 <code>ohmygirl</code> 整個文件夾移到 <code>photo</code> 文件夾裏去</p>
+</div>
+
+<h2 id="404-頁面"><a href="#404-頁面" class="headerlink" title="404 頁面"></a>404 頁面</h2><p>主題內置了一個簡單的 404 頁面，可在設置中開啟</p>
+<div class="note info flat"><p>本地預覽時，訪問出錯的網站是不會跳到 404 頁面的。</p>
+<p>如需本地預覽，請訪問 <code>http://localhost:4000/404.html</code></p>
+</div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A simple 404 page</span></span><br><span class="line"><span class="attr">error_404:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">subtitle:</span> <span class="string">&#x27;頁面沒有找到&#x27;</span></span><br><span class="line">  <span class="attr">background:</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/hexo-theme-butterfly-docs-error404.png" alt="hexo-theme-butterfly-docs-error404.png"></p>
+<h2 id="説説頁面"><a href="#説説頁面" class="headerlink" title="説説頁面"></a>説説頁面</h2><div class="note pink icon-padding flat"><i class="note-icon fa-solid fa-bell"></i><p>添加于 V5.0</p>
+</div>
+
+<p><strong>請留意，説説界面只支持原生的 markdown 格式，不支持標簽外挂和數學公式</strong></p>
+<h3 id="創建説説頁面"><a href="#創建説説頁面" class="headerlink" title="創建説説頁面"></a>創建説説頁面</h3><div class="note info flat"><p>説説頁文件名不一定是 shuoshuo, 例子中的 shuoshuo 只是一個示例<br>記得添加 <code>type: &quot;shuoshuo&quot;</code></p>
+</div>
+
+<ol>
+<li><p>前往你的 Hexo 的根目錄</p>
+</li>
+<li><p>輸入 <code>hexo new page shuoshuo</code></p>
+</li>
+<li><p>你會找到 <code>source/shuoshuo/index.md</code> 這個文件</p>
+</li>
+<li><p>修改這個文件：</p>
+</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 説説</span><br><span class="line">date: 2018-06-07 22:17:49</span><br><span class="line"><span class="section">type: &#x27;shuoshuo&#x27;</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以隱藏一些説説，可配置的參數：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">limit:</span><br><span class="line">  type: date</span><br><span class="line">  value: 2024-06-20</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>limit</td>
+<td>【可選】配置説説顯示數量</td>
+</tr>
+<tr>
+<td>limit.type</td>
+<td>【可選】配置説説顯示數量的類型 （date 或者 num）</td>
+</tr>
+<tr>
+<td>limit.value</td>
+<td>【可選】配置説説顯示數量的值 （當 type 配置為 date 時， value 的值必須為日期。當 type 配置為 num 時， value 的值必須為數字，且大於 0</td>
+</tr>
+</tbody></table>
+<h3 id="數據來源-1"><a href="#數據來源-1" class="headerlink" title="數據來源"></a>數據來源</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">本地生成</button><button type="button" class="tab">遠程拉取</button></div><div class="tab-contents"><div class="tab-item-content active"><p>在 Hexo 根目錄中的 <code>source/_data</code>（如果沒有 _data 文件夾，請自行創建），創建一個文件 shuoshuo.yml</p>
+<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-user"></i><p><code>author</code> 和 <code>avatar</code>可省略，會自動去獲取配置文件中的 <code>author</code> 和 <code>avatar</code></p>
+<p>如果需要開啓評論，必須配置 <code>key</code>，否則不會顯示評論按鈕</p>
+</div>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">author:</span> <span class="string">Butterfly</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">https://butterfly.js.org/img/avatar.png</span></span><br><span class="line">  <span class="attr">date:</span> <span class="number">2024-06-21 23:33:26</span></span><br><span class="line">  <span class="attr">key:</span> <span class="string">key-1</span></span><br><span class="line">  <span class="attr">content:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    This is a sample content for **Author 1**.</span></span><br><span class="line"><span class="string">    ![Sample Image](https://via.placeholder.com/150)</span></span><br><span class="line"><span class="string"></span>  <span class="attr">tags:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags1</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tags2</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">author:</span> <span class="string">Butterfly</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">https://butterfly.js.org/img/avatar.png</span></span><br><span class="line">  <span class="attr">date:</span> <span class="number">2024-06-20 23:33:26</span></span><br><span class="line">  <span class="attr">key:</span> <span class="string">key-2</span></span><br><span class="line">  <span class="attr">content:</span> <span class="string">|</span></span><br><span class="line"><span class="string">    This is a sample content for **Author 2**.</span></span><br><span class="line"><span class="string">    ![Sample Image](https://via.placeholder.com/150)</span></span><br><span class="line"><span class="string"></span>  <span class="attr">tags:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tag2</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">tag3</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> <span class="attr">author:</span> <span class="string">Butterfly</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">https://butterfly.js.org/img/avatar.png</span></span><br><span class="line">  <span class="attr">date:</span> <span class="number">2024-06-19 23:33:26</span></span><br><span class="line">  <span class="attr">key:</span> <span class="string">key-3</span></span><br><span class="line">  <span class="attr">content:</span> <span class="string">|</span></span><br><span class="line">    <span class="string">This</span> <span class="string">is</span> <span class="string">a</span> <span class="string">sample</span> <span class="string">content</span> <span class="string">for</span> <span class="string">**Author</span> <span class="number">3</span><span class="string">**.</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>author</td>
+<td>【可選】作者名稱</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>【可選】作者頭像</td>
+</tr>
+<tr>
+<td>date</td>
+<td>【必需】日期</td>
+</tr>
+<tr>
+<td>content</td>
+<td>【必需】內容（ Markdown 格式或者 Html 格式</td>
+</tr>
+<tr>
+<td>key</td>
+<td>【可選】評論的唯一標識, 開啓評論必須配置</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>【可選】標籤</td>
+</tr>
+</tbody></table></div><div class="tab-item-content"><div class="note warning flat"><p>注意： 選擇遠程加載後，本地生成的方法會無效。<br>遠程拉取只支持 <code>json</code></p>
+</div>
+
+<p>在説説頁面 Markdown 裏的 front-matter 添加遠程鏈接</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shuoshuo<span class="emphasis">_url: xxxxx</span></span><br></pre></td></tr></table></figure>
+
+<p>Json 的格式：</p>
+<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-user"></i><p><code>author</code> 和 <code>avatar</code>可省略，會自動去獲取配置文件中的 <code>author</code> 和 <code>avatar</code></p>
+</div>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Butterfly&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://butterfly.js.org/img/avatar.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;date&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-06-21 23:33:26&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;This is a sample content for **Author 1**.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;key-1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;tags1&quot;</span><span class="punctuation">,</span> <span class="string">&quot;tags2&quot;</span><span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Butterfly&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://butterfly.js.org/img/avatar.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;date&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-06-20 23:33:26&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;This is a sample content for **Author 2**.&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;key-2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;tag2&quot;</span><span class="punctuation">,</span> <span class="string">&quot;tag3&quot;</span><span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Butterfly&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;avatar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://butterfly.js.org/img/avatar.png&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;date&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-06-19 23:33:26&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;This is a sample content for **Author 3**.&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>author</td>
+<td>【可選】作者名稱</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>【可選】作者頭像</td>
+</tr>
+<tr>
+<td>date</td>
+<td>【必需】日期</td>
+</tr>
+<tr>
+<td>content</td>
+<td>【必需】內容（ Markdown 格式或者 Html 格式</td>
+</tr>
+<tr>
+<td>key</td>
+<td>【可選】評論的唯一標識, 開啓評論必須配置</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>【可選】標籤</td>
+</tr>
+</tbody></table></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<a class="btn-beautify block pink right larger" href="/posts/4aa8abbe/" title="📌 Butterfly 文檔(三) 主題配置"><i class="far fa-hand-point-right"></i><span>📌 Butterfly 文檔(三) 主題配置</span></a>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://gitychzh.github.io/hskt">Jerry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章連結: </span><span class="post-copyright-info"><a href="https://gitychzh.github.io/hskt/posts/dc584b87/">https://gitychzh.github.io/hskt/posts/dc584b87/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版權聲明: </span><span class="post-copyright-info">除特別聲明外，本博客所有文章均採用<a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 授權協議。轉載請註明出處：<a href="https://gitychzh.github.io/hskt">Butterfly</a>。</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/butterfly/">butterfly</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/%E4%B8%BB%E9%A1%8C/">主題</a></div><div class="post-share"><div class="social-share" data-image="https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://jsd.012700.xyz/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://jsd.012700.xyz/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>贊助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://jsd.012700.xyz/gh/jerryc127/CDN/Photo/wechat.jpg" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/Photo/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://jsd.012700.xyz/gh/jerryc127/CDN/Photo/alipay.jpg" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN/Photo/alipay.jpg" alt="支付寶"/></a><div class="post-qr-code-desc">支付寶</div></li><li class="reward-item"><a href="https://buy.stripe.com/3cs6rP6YA91sbbG5kk" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="/img/loading.gif" data-lazy-src="https://jsd.012700.xyz/gh/jerryc127/CDN@m2/img/stripe.png" alt="Stripe"/></a><div class="post-qr-code-desc">Stripe</div></li></ul></div></div><div class="ads-wrap"><ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-fb+5w+4e-db+86" data-ad-client="ca-pub-8919908724705274" data-ad-slot="5978969231"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/posts/4aa8abbe/" title="Butterfly 文檔(三) 主題配置"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-03-cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一頁</div><div class="info-item-2">Butterfly 文檔(三) 主題配置</div></div><div class="info-2"><div class="info-item-1">📚 文檔目錄 🚀 快速開始 - 📑 主題頁面 - 📌 主題配置 - ⚔️ 標簽外掛 - ❓ 主題問答 - ⚡️ 進階教程   你可以通過右下角的 簡 按鈕切換為簡體顯示    配置文件速讀你可以快速瞭解到所有配置的註解，讓你配置文件更加方便。如果遇到不太清楚的配置，可以在這篇文章找到更加詳細的資訊。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150...</div></div></div></a><a class="pagination-related" href="/posts/21cfbf15/" title="Butterfly 文檔(一) 快速開始"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-01-cover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一頁</div><div class="info-item-2">Butterfly 文檔(一) 快速開始</div></div><div class="info-2"><div class="info-item-1">📚 文檔目錄 🚀 快速開始 - 📑 主題頁面 - 📌 主題配置 - ⚔️ 標簽外挂 - ❓ 主題問答 - ⚡️ 進階教程   你可以通過右下角的 簡 按鈕切換為簡體顯示    hexo-theme-butterfly 是基於 hexo-theme-melody 的基礎上進行開發的主题。 安裝Git 安裝npm 安裝如果你身處中國大陸，且訪問 Github 不穩定，你可以用 Gitee 安裝穩定版【建議】 在你的 Hexo 根目錄下 1git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly  測試版 測試版可能存在 Bugs，追求穩定的請安裝穩定版   如果想要安裝比較新的 dev 分支，可以 1git clone -b dev https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly  升級方法：在主題目錄下，運行 git pull   穩定版【建議】 在你的 Hexo 根目錄裏 1g...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關文章</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/21cfbf15/" title="Butterfly 文檔(一) 快速開始"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-01-cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="info-item-2">Butterfly 文檔(一) 快速開始</div></div><div class="info-2"><div class="info-item-1">📚 文檔目錄 🚀 快速開始 - 📑 主題頁面 - 📌 主題配置 - ⚔️ 標簽外挂 - ❓ 主題問答 - ⚡️ 進階教程   你可以通過右下角的 簡 按鈕切換為簡體顯示    hexo-theme-butterfly 是基於 hexo-theme-melody 的基礎上進行開發的主题。 安裝Git 安裝npm 安裝如果你身處中國大陸，且訪問 Github 不穩定，你可以用 Gitee 安裝穩定版【建議】 在你的 Hexo 根目錄下 1git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly  測試版 測試版可能存在 Bugs，追求穩定的請安裝穩定版   如果想要安裝比較新的 dev 分支，可以 1git clone -b dev https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly  升級方法：在主題目錄下，運行 git pull   穩定版【建議】 在你的 Hexo 根目錄裏 1g...</div></div></div></a><a class="pagination-related" href="/posts/4073eda/" title="Butterfly 文檔(六) 進階教程"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-06-cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="info-item-2">Butterfly 文檔(六) 進階教程</div></div><div class="info-2"><div class="info-item-1">📚 文檔目錄 🚀 快速開始 - 📑 主題頁面 - 📌 主題配置 - ⚔️ 標簽外掛 - ❓ 主題問答 - ⚡️ 進階教程   你可以通過右下角的 簡 按鈕切換為簡體顯示    建議 不要把個人需要的文件&#x2F;圖片放在主題source文件夾裏，因為在升級主題的過程中，可能會把文件覆蓋刪除了。在 Hexo 根目錄的source文件夾裏，創建一個文件夾來放置個人文件&#x2F;圖片。引用文件直接為/文件夾名稱/文件名  音樂音樂界面使用了插件 hexo-tag-aplayer使用方法請參考插件文檔 音樂頁面只是普通的 page 頁，按普通頁面操作生成就行。  以下內容可供選擇配置 注意： 仍需要安裝插件hexo-tag-aplayer  插件會在每一個文件都插入 js 和 css，為了避免這一情況，3.0 版本內置了 aplayer 需要的 css 和 js。 首先在 Hexo 根目錄 _config 裏配置 asset_inject 為 false 12aplayer:  asset_inject: false  然後在你需要使用 aplayer 的頁面 Front-m...</div></div></div></a><a class="pagination-related" href="/posts/98d20436/" title="Butterfly 文檔(五) 主題問答"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-doc-05-cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="info-item-2">Butterfly 文檔(五) 主題問答</div></div><div class="info-2"><div class="info-item-1">📚 文檔目錄 🚀 快速開始 - 📑 主題頁面 - 📌 主題配置 - ⚔️ 標簽外掛 - ❓ 主題問答 - ⚡️ 進階教程   你可以通過右下角的 簡 按鈕切換為簡體顯示    以下是一些網友在安裝的過程中出現的問題。在提問題之前，先看有沒有解決方法。 運行後網頁顯示代碼頁面只顯示 extends includes/layout.pug block content #recent-posts.recent-posts include includes/recent-posts.pug include includes/pagination.pug #aside_content.aside_content include includes/aside.pug  請下載安裝：npm install hexo-renderer-pug hexo-renderer-stylus --save or yarn add hexo-renderer-pug hexo-renderer-stylus  配置友情鏈接報錯配置友情鏈接頁面時出現報錯 1234567891011121314151...</div></div></div></a><a class="pagination-related" href="/posts/507c070f/" title="Butterfly添加全局吸底Aplayer教程"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/Butterfly-add-aplayer-cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-31</div><div class="info-item-2">Butterfly添加全局吸底Aplayer教程</div></div><div class="info-2"><div class="info-item-1">以下文章只是教程 如果部署之后，并没有出现 aplayer , 请确认是否跟足步骤操作或者更换音乐源，多试试。 如果遇到使用問題，请仔细查看插件文档，或者到插件那裏反饋。   前言如果你想使用 aplayer，很多人都會推薦安裝 hexo-tag-aplayer 這款插件。這款插件通過 Hexo 獨有的標籤外掛，我們可以很方便的寫入一些參數，插件就會幫我們生成對應的 html。如果你只是使用一些簡單的功能，其實無需使用到這個插件，只需以 html 格式書寫就行，不用插件去轉換。 例如： 如果使用插件，在 markdown 中要這樣寫 1&#123;% meting &quot;000PeZCQ1i4XVs&quot; &quot;tencent&quot; &quot;artist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;  其會被插件渲染為 1&lt;div id=&quot;aplayer-uxAIfEUs&quot; class=&quot;...</div></div></div></a><a class="pagination-related" href="/posts/ceeb73f/" title="Butterfly 文檔(四) 標簽外挂"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-04-cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-28</div><div class="info-item-2">Butterfly 文檔(四) 標簽外挂</div></div><div class="info-2"><div class="info-item-1">📚 文檔目錄 🚀 快速開始 - 📑 主題頁面 - 📌 主題配置 - ⚔️ 標簽外挂 - ❓ 主題問答 - ⚡️ 進階教程   你可以通過右下角的 簡 按鈕切換為簡體顯示    標籤外掛是 Hexo 獨有的功能，並不是標準的 Markdown 格式。 以下的寫法，只適用於 Butterfly 主題，用在其它主題上不會有效果，甚至可能會報錯。使用前請留意   標籤外掛雖然能為主題帶來一些額外的功能和 UI 方面的強化，但是，標籤外掛也有明顯的限制，使用時請留意。   Note (Bootstrap Callout)通用設置用法 1用法 2（自定義 icon）移植於 next 主題，並進行修改。 123456789101112note:  # Note tag style values:  #  - simple    bs-callout old alert style. Default.  #  - modern    bs-callout new (v2-v3) alert style.  #  - flat      flat callout style with ba...</div></div></div></a><a class="pagination-related" href="/posts/ea33ab97/" title="自定義側邊欄"><img class="cover" src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/aside-diy-cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-30</div><div class="info-item-2">自定義側邊欄</div></div><div class="info-2"><div class="info-item-1">適用於 &gt;&#x3D; 3.8.0   側邊欄現在支持自定義了，可以添加自己喜歡的 widget。 可添加自己的 widget，也可以對現有的 widget 進行排序（博客資料和 公告這兩個固定，其它的能排序） widget 排序只需要配置 sort_order就行。（使用了 Flex 佈局的 order 屬性，具體可查看 mozilla 文檔。簡單來講，就是配置數字來實現排序，如果不配置，則默認為 0。數字越小，排序越靠前。 12345678910111213141516aside: ...  card_recent_post:    sort_order: # Don&#x27;t modify the setting unless you know how it works  card_categories:    sort_order: # Don&#x27;t modify the setting unless you know how it works  card_tags:    sort_order: # Don&#x27;t modify the sett...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Jerry</div><div class="author-info-description">A Simple and Card UI Design theme for Hexo</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly"><i class="fab fa-github"></i><span>主題 GitHub</span></a><div class="card-info-social-icons"><a class="social-icon" href="mailto:my@crazywong.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">如果你在使用中遇到問題，請到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly/issues" style="color:#49b1f5">Github Issues</a> 進行反饋，你也可以加入反饋群（掃碼或者點擊圖片跳轉） <div class="aside-qrcode" > <a href="https://h5.qun.qq.com/s/vTHKfqL0nC" rel="external nofollow noreferrer" target="_blank"> <img src="/img/loading.gif" data-lazy-src="/img/qq.jpg" title="QQ 二維碼"></a> <a href="https://t.me/bu2fly" rel="external nofollow noreferrer" target="_blank"> <img src="/img/loading.gif" data-lazy-src="/img/tg.jpg" title="Telegram 二維碼"></a> </div></div></div><div class="card-widget card-docs card-categories"><div class="item-headline"><i class="fas fa-car-side"></i><span>文檔目錄</span></div><div class="item-content"><ul class=card-category-list>
+  <li class=card-category-list-item><a class=card-category-list-link href=/posts/21cfbf15/ >🚀 快速開始</a></li>
+  <li class=card-category-list-item><a class=card-category-list-link href=/posts/dc584b87/ >📑 主題頁面</a></li>
+  <li class=card-category-list-item><a class=card-category-list-link href=/posts/4aa8abbe/ >📌 主題配置</a></li>
+  <li class=card-category-list-item><a class=card-category-list-link href=/posts/ceeb73f/ >⚔️ 標簽外挂</a></li>
+  <li class=card-category-list-item><a class=card-category-list-link href=/posts/98d20436/ >❓ 主題問答</a></li>
+  <li class=card-category-list-item><a class=card-category-list-link href=/posts/4073eda/ >⚡️ 進階教程</a></li>
+</ul>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-matter"><span class="toc-number">1.</span> <span class="toc-text">Front-matter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Page-Front-matter"><span class="toc-number">1.1.</span> <span class="toc-text">Page Front-matter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Post-Front-matter"><span class="toc-number">1.2.</span> <span class="toc-text">Post Front-matter</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%99%E7%B1%A4%E9%A0%81"><span class="toc-number">2.</span> <span class="toc-text">標籤頁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%A1%9E%E9%A0%81"><span class="toc-number">3.</span> <span class="toc-text">分類頁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5"><span class="toc-number">4.</span> <span class="toc-text">友情鏈接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%B5%E5%BB%BA%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E9%A0%81%E9%9D%A2"><span class="toc-number">4.1.</span> <span class="toc-text">創建友情鏈接頁面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B8%E6%93%9A%E4%BE%86%E6%BA%90"><span class="toc-number">4.2.</span> <span class="toc-text">數據來源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E9%9A%A8%E6%A9%9F%E6%8E%92%E5%BA%8F"><span class="toc-number">4.3.</span> <span class="toc-text">友情鏈接隨機排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8B%E6%83%85%E9%8F%88%E6%8E%A5%E7%95%8C%E9%9D%A2%E8%A8%AD%E7%BD%AE"><span class="toc-number">4.4.</span> <span class="toc-text">友情鏈接界面設置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%96%E5%BA%AB"><span class="toc-number">5.</span> <span class="toc-text">圖庫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E9%A0%81%E9%9D%A2"><span class="toc-number">5.1.</span> <span class="toc-text">子頁面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-%E9%A0%81%E9%9D%A2"><span class="toc-number">6.</span> <span class="toc-text">404 頁面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AA%AC%E8%AA%AC%E9%A0%81%E9%9D%A2"><span class="toc-number">7.</span> <span class="toc-text">説説頁面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%B5%E5%BB%BA%E8%AA%AC%E8%AA%AC%E9%A0%81%E9%9D%A2"><span class="toc-number">7.1.</span> <span class="toc-text">創建説説頁面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B8%E6%93%9A%E4%BE%86%E6%BA%90-1"><span class="toc-number">7.2.</span> <span class="toc-text">數據來源</span></a></li></ol></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/4073eda/" title="Butterfly 文檔(六) 進階教程"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-06-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly 文檔(六) 進階教程"></a><div class="content"><a class="title" href="/posts/4073eda/" title="Butterfly 文檔(六) 進階教程">Butterfly 文檔(六) 進階教程</a><time datetime="2020-05-28T14:39:25.000Z" title="發表於 2020-05-28 22:39:25">2020-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/98d20436/" title="Butterfly 文檔(五) 主題問答"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-doc-05-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly 文檔(五) 主題問答"></a><div class="content"><a class="title" href="/posts/98d20436/" title="Butterfly 文檔(五) 主題問答">Butterfly 文檔(五) 主題問答</a><time datetime="2020-05-28T14:38:21.000Z" title="發表於 2020-05-28 22:38:21">2020-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ceeb73f/" title="Butterfly 文檔(四) 標簽外挂"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-04-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly 文檔(四) 標簽外挂"></a><div class="content"><a class="title" href="/posts/ceeb73f/" title="Butterfly 文檔(四) 標簽外挂">Butterfly 文檔(四) 標簽外挂</a><time datetime="2020-05-28T14:38:11.000Z" title="發表於 2020-05-28 22:38:11">2020-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/4aa8abbe/" title="Butterfly 文檔(三) 主題配置"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-03-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly 文檔(三) 主題配置"></a><div class="content"><a class="title" href="/posts/4aa8abbe/" title="Butterfly 文檔(三) 主題配置">Butterfly 文檔(三) 主題配置</a><time datetime="2020-05-28T14:36:02.000Z" title="發表於 2020-05-28 22:36:02">2020-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/dc584b87/" title="Butterfly 文檔(二) 主題頁面"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly 文檔(二) 主題頁面"></a><div class="content"><a class="title" href="/posts/dc584b87/" title="Butterfly 文檔(二) 主題頁面">Butterfly 文檔(二) 主題頁面</a><time datetime="2020-05-28T14:34:41.000Z" title="發表於 2020-05-28 22:34:41">2020-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/21cfbf15/" title="Butterfly 文檔(一) 快速開始"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/09/butterfly-docs-01-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Butterfly 文檔(一) 快速開始"></a><div class="content"><a class="title" href="/posts/21cfbf15/" title="Butterfly 文檔(一) 快速開始">Butterfly 文檔(一) 快速開始</a><time datetime="2020-05-28T14:31:46.000Z" title="發表於 2020-05-28 22:31:46">2020-05-28</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/undefined/" title="使用hexo搭建博客"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用hexo搭建博客"/></a><div class="content"><a class="title" href="/posts/undefined/" title="使用hexo搭建博客">使用hexo搭建博客</a><time datetime="2025-11-15T05:39:36.559Z" title="發表於 2025-11-15 13:39:36">2025-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/undefined/" title="git教程"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git教程"/></a><div class="content"><a class="title" href="/posts/undefined/" title="git教程">git教程</a><time datetime="2025-11-13T15:43:46.000Z" title="發表於 2025-11-13 23:43:46">2025-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/undefined/" title="修改主题butterfly"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="修改主题butterfly"/></a><div class="content"><a class="title" href="/posts/undefined/" title="修改主题butterfly">修改主题butterfly</a><time datetime="2025-11-12T02:53:03.000Z" title="發表於 2025-11-12 10:53:03">2025-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/undefined/" title="域名绑定cloudflarePages教程"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="域名绑定cloudflarePages教程"/></a><div class="content"><a class="title" href="/posts/undefined/" title="域名绑定cloudflarePages教程">域名绑定cloudflarePages教程</a><time datetime="2025-11-09T16:30:17.000Z" title="發表於 2025-11-10 00:30:17">2025-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/undefined/" title="gitee的仓库镜像管理功能教程"><img src="/img/loading.gif" data-lazy-src="https://oss.012700.xyz/butterfly/2024/11/butterfly-docs-changelog-cover-9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="gitee的仓库镜像管理功能教程"/></a><div class="content"><a class="title" href="/posts/undefined/" title="gitee的仓库镜像管理功能教程">gitee的仓库镜像管理功能教程</a><time datetime="2025-11-09T15:41:12.000Z" title="發表於 2025-11-09 23:41:12">2025-11-09</time></div></div></div></div><div class="card-widget ads-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8919908724705274" data-ad-slot="8108145410" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div></div></main><footer id="footer" style="background-image: url(https://oss.012700.xyz/butterfly/2024/09/Butterfly-docs-02-cover.png);"><div class="footer-flex"><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">文檔</div><div class="footer-flex-content"><a href="/posts/21cfbf15/" target="_blank" title="🚀 快速開始">🚀 快速開始</a><a href="/posts/dc584b87/" target="_blank" title="📑 主題頁面">📑 主題頁面</a><a href="/posts/4aa8abbe/" target="_blank" title="📌 主題配置">📌 主題配置</a><a href="/posts/ceeb73f/" target="_blank" title="⚔️ 標簽外挂">⚔️ 標簽外挂</a><a href="/posts/98d20436/" target="_blank" title="❓ 主題問答">❓ 主題問答</a><a href="/posts/4073eda/" target="_blank" title="⚡️ 進階教程">⚡️ 進階教程</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">其他</div><div class="footer-flex-content"><a href="/Gallery/" target="_blank" title="圖庫">圖庫</a><a href="/messageboard/" target="_blank" title="留言板">留言板</a><a href="/talking/" target="_blank" title="說說">說說</a><a href="/link/" target="_blank" title="示例">示例</a><a href="/links/" target="_blank" title="友链">友链</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">框架</div><div class="footer-flex-content"><a href="https://hexo.io/zh-cn/" rel="external nofollow noreferrer" target="_blank" title="Hexo">Hexo</a><a href="https://butterfly.js.org/" rel="external nofollow noreferrer" target="_blank" title="Butterfly">Butterfly</a></div></div></div><div class="footer-flex-items"><div class="footer-flex-item"><div class="footer-flex-title">語言</div><div class="footer-flex-content"><a href="/en/" target="_blank" title="English">English</a><a href="/" target="_blank" title="中文">中文</a></div></div></div></div><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By Jerry</span><span class="framework-info"><span class="footer-separator">|</span><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="切換日夜模式"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄與雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="translateLink" type="button" title="簡繁轉換">簡</button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://jsd.012700.xyz/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://jsd.012700.xyz/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://jsd.012700.xyz/npm/hexo-theme-butterfly/source/js/tw_cn.min.js"></script><script src="https://jsd.012700.xyz/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://jsd.012700.xyz/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://jsd.012700.xyz/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const config = mermaidSrc.dataset.config ? JSON.parse(mermaidSrc.dataset.config) : {}
+      if (!config.theme) {
+        config.theme = theme
+      }
+      const mermaidThemeConfig = `%%{init: ${JSON.stringify(config)}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://jsd.012700.xyz/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const applyThemeDefaultsConfig = theme => {
+    if (theme === 'dark-mode') {
+      Chart.defaults.color = "rgba(255, 255, 255, 0.8)"
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.2)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    } else {
+      Chart.defaults.color = "rgba(0, 0, 0, 0.8)"
+      Chart.defaults.borderColor = "rgba(0, 0, 0, 0.1)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    }
+  }
+
+  // Recursively traverse the config object and automatically apply theme-specific color schemes
+  const applyThemeConfig = (obj, theme) => {
+    if (typeof obj !== 'object' || obj === null) return
+
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      // If the property is an object and has theme-specific options, apply them
+      if (typeof value === 'object' && value !== null) {
+        if (value[theme]) {
+          obj[key] = value[theme] // Apply the value for the current theme
+        } else {
+          // Recursively process child objects
+          applyThemeConfig(value, theme)
+        }
+      }
+    })
+  }
+
+  const runChartJS = ele => {
+    window.loadChartJS = true
+
+    Array.from(ele).forEach((item, index) => {
+      const chartSrc = item.firstElementChild
+      const chartID = item.getAttribute('data-chartjs-id') || ('chartjs-' + index) // Use custom ID or default ID
+      const width = item.getAttribute('data-width')
+      const existingCanvas = document.getElementById(chartID)
+
+      // If a canvas already exists, remove it to avoid rendering duplicates
+      if (existingCanvas) {
+          existingCanvas.parentNode.remove()
+      }
+
+      const chartDefinition = chartSrc.textContent
+      const canvas = document.createElement('canvas')
+      canvas.id = chartID
+
+      const div = document.createElement('div')
+      div.className = 'chartjs-wrap'
+
+      if (width) {
+        div.style.width = width
+      }
+
+      div.appendChild(canvas)
+      chartSrc.insertAdjacentElement('afterend', div)
+
+      const ctx = document.getElementById(chartID).getContext('2d')
+
+      const config = JSON.parse(chartDefinition)
+
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark-mode' : 'light-mode'
+
+      // Set default styles (initial setup)
+      applyThemeDefaultsConfig(theme)
+
+      // Automatically traverse the config and apply dual-mode color schemes
+      applyThemeConfig(config, theme)
+
+      new Chart(ctx, config)
+    })
+  }
+
+  const loadChartJS = () => {
+    const chartJSEle = document.querySelectorAll('#article-container .chartjs-container')
+    if (chartJSEle.length === 0) return
+
+    window.loadChartJS ? runChartJS(chartJSEle) : btf.getScript('https://jsd.012700.xyz/npm/chart.js/dist/chart.umd.min.js').then(() => runChartJS(chartJSEle))
+  }
+
+  // Listen for theme change events
+  btf.addGlobalFn('themeChange', loadChartJS, 'chartjs')
+  btf.addGlobalFn('encrypt', loadChartJS, 'chartjs')
+
+  window.pjax ? loadChartJS() : document.addEventListener('DOMContentLoaded', loadChartJS)
+})()</script></div><script>window.newestComments = {
+  changeContent: content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[圖片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[連結]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代碼]') // replace code
+    content = content.replace(/<code>.*?<\/code>/gi, '[代碼]') // replace code
+    content = content.replace(/<[^>]+>/g, "") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0, 150) + '...'
+    }
+    return content
+  },
+
+  generateHtml: (array, ele) => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class="aside-list-item">'
+
+        if (true && array[i].avatar) {
+          const imgAttr = 'data-lazy-src'
+          const lazyloadNative = ''
+          result += `<a href="${array[i].url}" class="thumbnail"><img ${imgAttr}="${array[i].avatar}" alt="${array[i].nick}" ${lazyloadNative}></a>`
+        }
+
+        result += `<div class="content">
+        <a class="comment" href="${array[i].url}" title="${array[i].content}">${array[i].content}</a>
+        <div class="name"><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '暫無評論'
+    }
+
+    ele.innerHTML = result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh(ele)
+  },
+
+  newestCommentInit: (name, getComment) => {
+    const $dom = document.querySelector('#card-newest-comments .aside-list')
+    if ($dom) {
+      const data = btf.saveToLocal.get(name)
+      if (data) {
+        newestComments.generateHtml(JSON.parse(data), $dom)
+      } else {
+        getComment($dom)
+      }
+    }
+  },
+
+  run: (name, getComment) => {
+    newestComments.newestCommentInit(name, getComment)
+    btf.addGlobalFn('pjaxComplete', () => newestComments.newestCommentInit(name, getComment), name)
+  }
+}</script><script>window.addEventListener('load', () => {
+  const keyName = 'artalk-newest-comments'
+  const { changeContent, generateHtml, run } = window.newestComments
+
+  const getAvatarValue = async () => {
+    const predefinedAvatarCdn = ''
+    const predefinedAvatarDefault = ''
+
+    const avatarDefaultFormat = e => e.startsWith('d=') ? e : `d=${e}`
+
+    if (predefinedAvatarCdn && predefinedAvatarDefault) {
+      return { avatarCdn: predefinedAvatarCdn, avatarDefault: avatarDefaultFormat(predefinedAvatarDefault) }
+    }
+
+    try {
+      const res = await fetch('https://artalk.crazywong.com/api/v2/conf')
+      const result = await res.json()
+      const { mirror, params, default: defaults } = result.frontend_conf.gravatar
+      const avatarCdn = predefinedAvatarCdn || mirror
+      let avatarDefault = avatarDefaultFormat(predefinedAvatarDefault || params || defaults)
+      return { avatarCdn, avatarDefault}
+    } catch (e) {
+      console.error(e)
+      return { avatarCdn: predefinedAvatarCdn, avatarDefault: avatarDefaultFormat(predefinedAvatarDefault) }
+    }
+  }
+
+  const searchParams = new URLSearchParams({
+    'site_name': 'Butterfly-Docs',
+    'limit': '12', // Fetch more comments to filter pending comments
+  })
+
+  const getComment = async (ele) => {
+    try {
+      const res = await fetch(`https://artalk.crazywong.com/api/v2/stats/latest_comments?${searchParams}`)
+      const result = await res.json()
+      const { avatarCdn, avatarDefault } = await getAvatarValue()
+      const artalk = result.data
+        .filter(e => !e.is_pending) // Filter pending comments
+        .slice(0, 6) // Limit the number of comments
+        .map(e => {
+          const avatar = avatarCdn && e.email_encrypted ? `${avatarCdn}${e.email_encrypted}?${avatarDefault}` : ''
+          return {
+            'avatar': avatar,
+            'content': changeContent(e.content_marked),
+            'nick': e.nick,
+            'url': e.page_url,
+            'date': e.date,
+          }
+        })
+      btf.saveToLocal.set(keyName, JSON.stringify(artalk), 5/(60*24))
+      generateHtml(artalk, ele)
+    } catch (e) {
+      console.log(e)
+      ele.textContent= "無法取得評論，請確認配置是否正確"
+    }
+  }
+
+  run(keyName, getComment)
+})</script><script data-pjax src="/self/btf.js"></script><script defer="defer" id="ribbon" src="https://jsd.012700.xyz/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://jsd.012700.xyz/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      true
+        ? (usePjax ? pjax.loadUrl('/404') : window.location.href = '/404')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script>(() => {
+  const option = null
+  const config = {"site_uv":true,"site_pv":true,"page_pv":true,"token":"qTvz1SkmPDt785fgh6BpiA5qiFFIVUwxj8Ft+rPW+cdN59v1hXjwRgSmy0+ji9m+oLlcxvo2NfDSMa6epVl3NTlsN3ejCIwWeP8Y51aEJ0Sbem4UexGmJLspB7AkOBId2SdtT6QWEBlGmFIIQgchQ2zAKYxTmc/kpBED5aLSr+3uvmQ9/G7FJQeVFpveDkK0xM1hu36xq4a6/FSeROxtoEp5zabzTWiYTlLsQzIl/NlELnCq3nxK+oo/vl3UQo/oM/rae/gJX/MaVKsgIUCd2ABJogNkx2KTenBIBpbPki5FzOgPh6/z4GPa4HvhNO51DDVG1SEQZooqEYmt/gnybLBWFbN+7liZWw=="}
+
+  const runTrack = () => {
+    if (typeof umami !== 'undefined' && typeof umami.track === 'function') {
+      umami.track(props => ({ ...props, url: window.location.pathname, title: GLOBAL_CONFIG_SITE.title }))
+    } else {
+      console.warn('Umami Analytics: umami.track is not available')
+    }
+  }
+
+  const loadUmamiJS = () => {
+    btf.getScript('https://umami.012700.xyz/script.js', {
+      'data-website-id': '2a796d6c-6499-42d8-8eb4-d9a2930b0ff3',
+      'data-auto-track': 'false',
+      ...option
+    }).then(() => {
+      runTrack()
+    }).catch(error => {
+      console.error('Umami Analytics: Error loading script', error)
+    })
+  }
+
+  const getData = async (isPost) => {
+    try {
+      const now = Date.now()
+      const keyUrl = isPost ? `&url=${window.location.pathname}` : ''
+      const headerList = { 'Accept': 'application/json' }
+
+      if (true) {
+        headerList['Authorization'] = `Bearer ${config.token}`
+      } else {
+        headerList['x-umami-api-key'] = config.token
+      }
+
+      const res = await fetch(`https://umami.012700.xyz/api/websites/2a796d6c-6499-42d8-8eb4-d9a2930b0ff3/stats?startAt=0000000000&endAt=${now}${keyUrl}`, {
+        method: "GET",
+        headers: headerList
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
+      }
+
+      return await res.json()
+    } catch (error) {
+      console.error('Umami Analytics: Failed to fetch data', error)
+      throw error
+    }
+  }
+
+  const insertData = async () => {
+    try {
+      if (GLOBAL_CONFIG_SITE.pageType === 'post' && config.page_pv) {
+        const pagePV = document.getElementById('umamiPV')
+        if (pagePV) {
+          const data = await getData(true)
+          if (data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            pagePV.textContent = data.pageviews.value
+          } else {
+            console.warn('Umami Analytics: Invalid page view data received')
+          }
+        }
+      }
+
+      if (config.site_uv || config.site_pv) {
+        const data = await getData(false)
+
+        if (config.site_uv) {
+          const siteUV = document.getElementById('umami-site-uv')
+          if (siteUV && data && data.visitors && typeof data.visitors.value !== 'undefined') {
+            siteUV.textContent = data.visitors.value
+          } else if (siteUV) {
+            console.warn('Umami Analytics: Invalid site UV data received')
+          }
+        }
+
+        if (config.site_pv) {
+          const sitePV = document.getElementById('umami-site-pv')
+          if (sitePV && data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            sitePV.textContent = data.pageviews.value
+          } else if (sitePV) {
+            console.warn('Umami Analytics: Invalid site PV data received')
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Umami Analytics: Failed to insert data', error)
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', runTrack, 'umami_analytics_run_track')
+  btf.addGlobalFn('pjaxComplete', insertData, 'umami_analytics_insert')
+
+
+  loadUmamiJS()
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertData)
+  } else {
+    setTimeout(insertData, 100)
+  }
+})()</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  正在加載數據庫</span></div><div class="local-search-input"><input placeholder="搜尋文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="https://jsd.012700.xyz/npm/hexo-theme-butterfly/source/js/search/local-search.min.js"></script></div></div></body></html>
