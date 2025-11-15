@@ -15,3 +15,4 @@
       descr: 博客描述
   ```
 4. 點擊下面的 `Commit changes` ，合併到 butterfly.js.org 倉庫
+## 我是来自gitee 测试一下它的自动提交到github的功能
