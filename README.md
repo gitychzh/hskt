@@ -16,3 +16,4 @@
   ```
 4. 點擊下面的 `Commit changes` ，合併到 butterfly.js.org 倉庫
 ## 我是来自gitee 测试一下它的自动提交到github的功能
+1. 已经提交到gitee了，有没有改变
