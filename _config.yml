@@ -3,14 +3,22 @@
 #################################################################
 
 # Site
-title: NexT
-description: NexT - An elegant and powerful theme for Hexo.
-keywords: "Hexo, NexT"
+title: W我是标题
+subtitle: 'config子标题'
+description: '描述'
+keywords:
+author: 红薯
+# language: zh-CN
 language: en
-timezone: UTC
+timezone: Asia/Shanghai
+
+# description: NexT - An elegant and powerful theme for Hexo.
+# keywords: "Hexo, NexT"
+# language: en
+# timezone: UTC
 
 # URL
-url: https://theme-next.js.org
+url: https://gitychzh.github.io/hskt
 permalink: :title/
 permalink_defaults:
 

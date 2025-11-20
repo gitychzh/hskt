@@ -1,6 +1,6 @@
 en:
   name: English
-  subtitle: Theme for Hexo
+  subtitle: Theme for Hexo_English
   author: Theme NexT
   description: Stay Simple. Stay NexT.
 ru:
@@ -20,3 +20,8 @@ ru:
     FAQ's: ЧаВо
 zh-TW:
   name: Chinese
+zh-CN:
+  name: 中文
+  title: 红薯课堂
+  subtitle: 一起学习一起进步
+  author: 红薯

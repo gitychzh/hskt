@@ -17,10 +17,10 @@ custom_file_path:
 # ====================== Scheme Settings ====================== #
 # ============================================================= #
 
-#scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-scheme: Gemini
+scheme: Muse
+# scheme: Mist
+# scheme: Pisces
+# scheme: Gemini
 
 darkmode: true
 
@@ -97,7 +97,9 @@ menu:
   Plugins: /plugins/ || fa fa-flask
   archives: /archives/ || fa fa-archive
   #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+  # commonweal: /404/ || fa fa-heartbeat
+  # 404: /404/ || fa fa-heartbeat
+  测试标题: /test_menu/
 
 menu_settings:
   icons: true
@@ -109,8 +111,10 @@ menu_settings:
 # ============================================================= #
 
 sidebar:
-  position: left
+  position: left 
+  # position: right
   display: post
+  # display: always
   padding: 18
   offset: 12
 
@@ -253,10 +257,7 @@ motion:
 comments:
   lazyload: true
 
-disqus:
-  enable: true
-  shortname: next-theme
-  count: true
+
 
 
 # ============================================================= #
