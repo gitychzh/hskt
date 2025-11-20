@@ -18,7 +18,8 @@ timezone: Asia/Shanghai
 # timezone: UTC
 
 # URL
-url: https://gitychzh.github.io/hskt
+url: https://gitychzh.github.io
+root: /hskt/
 permalink: :title/
 permalink_defaults:
 
