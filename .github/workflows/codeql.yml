@@ -1,41 +1,41 @@
-name: "CodeQL"
+name: Deploy Hexo to GH-Pages
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-  schedule:
-    - cron: "3 6 * * 3"
-
+    branches:  # 当推送到main或master分支时触发，请根据你的仓库默认分支名修改修改来自gitee镜像模式3来自本地更新1
+        - main
 jobs:
-  analyze:
-    name: Analyze
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ javascript ]
+      contents: write # 确保action有写入gh-pages分支的权限
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+      # 1. 检出源代码
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
-          languages: ${{ matrix.language }}
-          queries: +security-and-quality
+          fetch-depth: 0 # 获取所有历史，这对于某些Hexo主题/插件是必须的
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v4
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v4
+      # 2. 设置指定版本的Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          category: "/language:${{ matrix.language }}"
+          node-version: '22.21.1' # 使用你指定的22.x大版本
+          cache: 'npm' # 缓存npm依赖，加快后续构建速度
+
+      # 3. 安装依赖并构建
+      - name: Install and Build
+        run: |
+          npm ci --include=dev # 使用ci命令替代install，确保依赖版本与lock文件一致
+          npx hexo clean # 清理旧文件
+          npx hexo generate # 生成静态站点文件
+
+      # 4. 部署到gh-pages分支
+      - name: Deploy to GH-Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # 使用内置的GITHUB_TOKEN，无需手动创建
+          publish_branch: gh-pages # 部署到的分支名
+          publish_dir: ./public # Hexo生成的静态文件目录
+          force_orphan: true # 确保gh-pages分支只保留最近一次部署的文件
