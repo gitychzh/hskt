@@ -3,13 +3,13 @@
 #################################################################
 
 # Site
-title: W我是标题
+title: 红薯课堂
 subtitle: 'config子标题'
 description: '描述'
 keywords:
 author: 红薯
-# language: zh-CN
-language: en
+language: zh-CN
+# language: en
 timezone: Asia/Shanghai
 
 # description: NexT - An elegant and powerful theme for Hexo.

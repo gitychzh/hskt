@@ -17,10 +17,10 @@ custom_file_path:
 # ====================== Scheme Settings ====================== #
 # ============================================================= #
 
-scheme: Muse
+# scheme: Muse
 # scheme: Mist
 # scheme: Pisces
-# scheme: Gemini
+scheme: Gemini
 
 darkmode: true
 
@@ -32,7 +32,7 @@ darkmode: true
 creative_commons:
   license: by-nc-sa
   size: big
-  sidebar: true
+  sidebar: false #@ychzh,修改4,去掉头像下面的license拍照图片
 
 
 # ============================================================= #
@@ -123,11 +123,11 @@ avatar:
   rounded: true
 
 social:
-  GitHub: https://github.com/next-theme || fab fa-github
-  RSS: /atom.xml || fa fa-rss
-  Crowdin: https://crowdin.com/project/hexo-theme-next || fa fa-globe-asia
-  Gitter: https://app.gitter.im/#/room/#next:gitter.im || fab fa-gitter
-  Telegram (Chinese Language): https://t.me/theme_next_cn || fab fa-telegram
+  GitHub: https://github.com/gitychzh/hskt || fab fa-github
+  # RSS: /atom.xml || fa fa-rss
+  # Crowdin: https://crowdin.com/project/hexo-theme-next || fa fa-globe-asia
+  # Gitter: https://app.gitter.im/#/room/#next:gitter.im || fab fa-gitter
+  # Telegram (Chinese Language): https://t.me/theme_next_cn || fab fa-telegram
 
 social_icons:
   enable: true
@@ -144,13 +144,14 @@ toc:
 # ====================== Footer Settings ====================== #
 # ============================================================= #
 
-footer:
-  since: 2014
-  icon:
-    name: fa fa-heart
-    animated: true
-    color: "#808080"
-  copyright: NexT
+footer: #@ychzh,修改5，去掉页脚
+  powered: false
+  
+  # icon:
+  #   name: fa fa-heart
+  #   animated: true
+  #   color: "#808080"
+  # copyright: NexT
 
 
 # ============================================================= #
@@ -189,8 +190,8 @@ back2top:
   sidebar: false
   scrollpercent: true
 
-github_banner:
-  enable: true
+github_banner: #@ychzh修改1，让右上角的猫咪头像不显示。
+  enable: false
   permalink: https://github.com/next-theme/hexo-theme-next
   title: Fork NexT on GitHub
 
