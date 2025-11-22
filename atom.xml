@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>红薯课堂</title>
+  
+  <subtitle>config子标题</subtitle>
+  <link href="https://223722.xyz/atom.xml" rel="self"/>
+  
+  <link href="https://223722.xyz/"/>
+  <updated>2025-11-22T17:00:07.442Z</updated>
+  <id>https://223722.xyz/</id>
+  
+  <author>
+    <name>红薯</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用hexo搭建博客</title>
+    <link href="https://223722.xyz/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/"/>
+    <id>https://223722.xyz/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</id>
+    <published>2025-11-22T17:00:07.442Z</published>
+    <updated>2025-11-22T17:00:07.442Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="git下载与安装"><a href="#git下载与安装" class="headerlink" title="git下载与安装"></a>git下载与安装</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9kb3dubG9hZC93aW4=">下载git<i class="fa fa-external-link-alt"></i></span> ，安装就直接下一步即可，注意环境变量。<br>验证是否安装正确</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git -v</span><br></pre></td></tr></table></figure><p>显示版本号就表示成功</p><h3 id="node下载与安装"><a href="#node下载与安装" class="headerlink" title="node下载与安装"></a>node下载与安装</h3><p><span class="exturl" data-url="aHR0cDovL25vZGVqcy5vcmcv">下载node<i class="fa fa-external-link-alt"></i></span>,点get node.js,选择LTS（长期维护的版本）最新版，当前是V22.21.1<br>验证是否安装正确</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure><p>显示版本号就表示成功</p><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>验证是否安装正确</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure><p>显示版本号就表示成功</p><h2 id="使用hexo创建项目"><a href="#使用hexo创建项目" class="headerlink" title="使用hexo创建项目"></a>使用hexo创建项目</h2><h3 id="初始化-创建-项目有以下两个方式，推荐第二种"><a href="#初始化-创建-项目有以下两个方式，推荐第二种" class="headerlink" title="初始化(创建)项目有以下两个方式，推荐第二种"></a>初始化(创建)项目有以下两个方式，推荐第二种</h3><h4 id="安装-Hexo-完成后，请执行下列命令，Hexo-将会在指定文件夹中新建所需要的文件。"><a href="#安装-Hexo-完成后，请执行下列命令，Hexo-将会在指定文件夹中新建所需要的文件。" class="headerlink" title="安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。"></a>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure><h4 id="推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令"><a href="#推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令" class="headerlink" title="推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令"></a>推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init .</span><br></pre></td></tr></table></figure><p>注意，结尾必须有一个&quot; . &quot;,英文的点,表示在当前目录下创建项目。<br>初始化后，您的项目文件夹将如下所示：</p><h3 id="安装依赖，就是项目根目录下的package-json里的dependencies里的内容"><a href="#安装依赖，就是项目根目录下的package-json里的dependencies里的内容" class="headerlink" title="安装依赖，就是项目根目录下的package.json里的dependencies里的内容"></a>安装依赖，就是项目根目录下的package.json里的dependencies里的内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><h3 id="写文章（博客），可以在source-posts目录下手动创建-md-的文件，也可以通过命令创建"><a href="#写文章（博客），可以在source-posts目录下手动创建-md-的文件，也可以通过命令创建" class="headerlink" title="写文章（博客），可以在source&#x2F;_posts目录下手动创建&quot;.md&quot;的文件，也可以通过命令创建"></a>写文章（博客），可以在source&#x2F;_posts目录下手动创建&quot;.md&quot;的文件，也可以通过命令创建</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page --path about/me <span class="string">&quot;About me&quot;</span></span><br></pre></td></tr></table></figure><p>以上命令会创建一个 source&#x2F;about&#x2F;me.md 文件，同时 Front Matter 中的 title 为 &quot;About me&quot;</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new index</span><br></pre></td></tr></table></figure><p>这个命令会在source&#x2F;_posts目录下创建一个index.md的文件。</p><h3 id="安装主题-以-butterfly-为例"><a href="#安装主题-以-butterfly-为例" class="headerlink" title="安装主题(以 butterfly 为例)"></a>安装主题(以 butterfly 为例)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><p>如果https的方式不行，就试试ssh的方式</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master git@github.com:jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><p>必须立刻解除绑定，否则会与工作流产生冲突，执行如下命令(已废除)如果未删除.git和.github文件夹就运行了，那就不许删除缓存了</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~~ git <span class="built_in">rm</span> -r --cached themes/butterfly~~</span><br></pre></td></tr></table></figure><p>改为如下代码，作用是删除butterfly目录下的.git文件夹（注意这个是隐藏的）和.github文件夹，也可以不用代码，手动在资源管理器中删除。这样可以避免后续的workflows工作流自动部署的冲突。</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf themes/butterfly/.git themes/butterfly/.github</span><br></pre></td></tr></table></figure><h4 id="以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中-并删除主题里的-git与-github文件夹。"><a href="#以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中-并删除主题里的-git与-github文件夹。" class="headerlink" title="以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中 并删除主题里的.git与.github文件夹。"></a>以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中 并删除主题里的.git与.github文件夹。</h4><h4 id="修改-Hexo-根目錄下的-config-yml，把主題改為-butterfly"><a href="#修改-Hexo-根目錄下的-config-yml，把主題改為-butterfly" class="headerlink" title="修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly"></a>修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly</h4><p>theme: butterfly</p><h4 id="安装这个主题所需要的依赖"><a href="#安装这个主题所需要的依赖" class="headerlink" title="安装这个主题所需要的依赖"></a>安装这个主题所需要的依赖</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure><h4 id="修改项目的而不是主题的根目录下-config-yml文件"><a href="#修改项目的而不是主题的根目录下-config-yml文件" class="headerlink" title="修改项目的而不是主题的根目录下_config.yml文件"></a>修改项目的而不是主题的根目录下_config.yml文件</h4><p>1,cloudflare可以正常显示页面，github page不能正常显示的配置如下<br>url: <span class="exturl" data-url="aHR0cHM6Ly9naXR5Y2h6aC5naXRodWIuaW8vaHNrdDY=">https://gitychzh.github.io/hskt6<i class="fa fa-external-link-alt"></i></span><br>root: &#x2F;<br>2，github pages可以正常展示页面，cloudflare不能正常展示如下<br>url: <span class="exturl" data-url="aHR0cHM6Ly9naXR5Y2h6aC5naXRodWIuaW8v">https://gitychzh.github.io<i class="fa fa-external-link-alt"></i></span><br>root: &#x2F;hskt6 &#x2F;<br>3，hskt6换成你自己的项目名，暂时没有更好的办法解决这个问题，可以考虑建两个仓库，分别部署。</p><h4 id="升级建议"><a href="#升级建议" class="headerlink" title="升级建议"></a>升级建议</h4><p>在 hexo 的根目錄創建一個文件 _config.butterfly.yml，並把主題目錄的 _config.yml 內容複製到 _config.butterfly.yml 去。注意，这个_config.butterfly.yml优先级比根目录下的_config.yml高，所以不用担心冲突。</p><h3 id="项目本地编译与预览"><a href="#项目本地编译与预览" class="headerlink" title="项目本地编译与预览"></a>项目本地编译与预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure><p>以上命令，会清除缓存，并编译静态资源到public文件夹下，并生成一个<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo0MDAw55qE572R6aG15L6b5pys5Zyw6aKE6KeI">http://localhost:4000的网页供本地预览<i class="fa fa-external-link-alt"></i></span></p><h3 id="创建远程仓库并push上传到远端仓库"><a href="#创建远程仓库并push上传到远端仓库" class="headerlink" title="创建远程仓库并push上传到远端仓库"></a>创建远程仓库并push上传到远端仓库</h3><h4 id="github-注册-登录-，创建仓库，点New-repository-输入仓库名，其他留空，以为hskt为例"><a href="#github-注册-登录-，创建仓库，点New-repository-输入仓库名，其他留空，以为hskt为例" class="headerlink" title="github 注册 登录 ，创建仓库，点New repository ,输入仓库名，其他留空，以为hskt为例"></a>github 注册 登录 ，创建仓库，点New repository ,输入仓库名，其他留空，以为hskt为例</h4><p>然后在本地执行如下命令(项目里执行)</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init </span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M master</span><br><span class="line">git remote add origin git@github.com:gitychzh/hskt.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><p>也可以强制推送<br>git push -u origin master --force<br>第一次，以后就只需要git push即可 或者后面加--force</p><h4 id="git-克隆仓库的时候，记得在末尾-加-点-表示在当前目录下下载资源。"><a href="#git-克隆仓库的时候，记得在末尾-加-点-表示在当前目录下下载资源。" class="headerlink" title="git 克隆仓库的时候，记得在末尾 加 点 . 表示在当前目录下下载资源。"></a>git 克隆仓库的时候，记得在末尾 加 点 . 表示在当前目录下下载资源。</h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;环境搭建&quot;&gt;&lt;a href=&quot;#环境搭建&quot; class=&quot;headerlink&quot; title=&quot;环境搭建&quot;&gt;&lt;/a&gt;环境搭建&lt;/h2&gt;&lt;h3 id=&quot;git下载与安装&quot;&gt;&lt;a href=&quot;#git下载与安装&quot; class=&quot;headerlink&quot; title=&quot;g</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git教程</title>
+    <link href="https://223722.xyz/git%E6%95%99%E7%A8%8B/"/>
+    <id>https://223722.xyz/git%E6%95%99%E7%A8%8B/</id>
+    <published>2025-11-13T15:43:46.000Z</published>
+    <updated>2025-11-22T17:00:07.442Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p>git log --oneline --pretty&#x3D;format:&quot;%h - %ad : %s&quot; --date&#x3D;format:&quot;%Y-%m-%d %H:%M:%S&quot;<br>输出格式如下：<br>8f86ff4 - 2025-11-12 01:41:32 : 新增搜索功能<br>5af639d - 2025-11-10 02:45:04 : 20251109，最后一次修改<br>8c00529 - 2025-11-09 23:35:48 : 来自本地跟新1<br>0dbf5a8 - 2025-11-09 14:21:42 : update source&#x2F;_posts&#x2F;第六篇博客.md.</p><h2 id="回退到某个节点，比如上面的-8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。"><a href="#回退到某个节点，比如上面的-8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。" class="headerlink" title="回退到某个节点，比如上面的 8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。"></a>回退到某个节点，比如上面的 8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。</h2><p>git reset --hard 8c00529</p><h2 id="回退到上一个节点，或者上上个节点"><a href="#回退到上一个节点，或者上上个节点" class="headerlink" title="回退到上一个节点，或者上上个节点"></a>回退到上一个节点，或者上上个节点</h2><p>git reset --hard head^<br>git reset --hard head^^</p><h2 id="本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。"><a href="#本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。" class="headerlink" title="本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。"></a>本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。</h2><p>git branch feature&#x2F;test-domain</p><h2 id="切换到新分支"><a href="#切换到新分支" class="headerlink" title="切换到新分支"></a>切换到新分支</h2><p>git checkout feature&#x2F;test-domain<br>比如切换到master ,git checkout master</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;查看日志&quot;&gt;&lt;a href=&quot;#查看日志&quot; class=&quot;headerlink&quot; title=&quot;查看日志&quot;&gt;&lt;/a&gt;查看日志&lt;/h2&gt;&lt;p&gt;git log --oneline --pretty&amp;#x3D;format:&amp;quot;%h - %ad : %s&amp;quo</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>修改主题butterfly</title>
+    <link href="https://223722.xyz/%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98butterfly/"/>
+    <id>https://223722.xyz/%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98butterfly/</id>
+    <published>2025-11-12T02:53:03.000Z</published>
+    <updated>2025-11-22T17:00:07.442Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="增加搜索功能"><a href="#增加搜索功能" class="headerlink" title="增加搜索功能"></a>增加搜索功能</h2><p>详细说明请参考<span class="exturl" data-url="aHR0cHM6Ly9idXR0ZXJmbHkuanMub3JnL3Bvc3RzLzRhYThhYmJlLw==">butterfly主题配置(文档三)第17项<i class="fa fa-external-link-alt"></i></span>，编辑_config.butterfly.yml</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  # Choose: algolia_search / local_search / docsearch</span><br><span class="line">  # leave it empty if you don&#x27;t need search</span><br><span class="line">  use: local_search #@ychzh 修改</span><br><span class="line">  placeholder: </span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;增加搜索功能&quot;&gt;&lt;a href=&quot;#增加搜索功能&quot; class=&quot;headerlink&quot; title=&quot;增加搜索功能&quot;&gt;&lt;/a&gt;增加搜索功能&lt;/h2&gt;&lt;p&gt;详细说明请参考&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9idXR0</summary>
+      
+    
+    
+    
+    
+    <category term="我是修改主题butterfly的tag" scheme="https://223722.xyz/tags/%E6%88%91%E6%98%AF%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98butterfly%E7%9A%84tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域名绑定cloudflarePages教程</title>
+    <link href="https://223722.xyz/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AcloudflarePages%E6%95%99%E7%A8%8B/"/>
+    <id>https://223722.xyz/%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9AcloudflarePages%E6%95%99%E7%A8%8B/</id>
+    <published>2025-11-09T16:30:17.000Z</published>
+    <updated>2025-11-22T17:00:07.442Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="域名绑定博客网站网址cloudflarePages教程"><a href="#域名绑定博客网站网址cloudflarePages教程" class="headerlink" title="域名绑定博客网站网址cloudflarePages教程"></a>域名绑定博客网站网址cloudflarePages教程</h2><p>此教程是在<a href="spaceship.com">spaceship</a>上购买的域名绑定到<a href="cloudflare.com">cloudflare</a>,以我自己的域名<a href="223722.xyz">223722.xyz</a>为例。<br>在此之前，先创建 cloudflare pages，与github pages类似。</p><h3 id="1在spaceship-com购买域名与DNS设置"><a href="#1在spaceship-com购买域名与DNS设置" class="headerlink" title="1在spaceship.com购买域名与DNS设置"></a>1在spaceship.com购买域名与DNS设置</h3><p>打开<a href="spaceship.com">spaceship</a>，选择好域名，付款，登录， —— 点右上角 Launchpad(启动面板) —— Domain Manager(域名管理器) —— 出现你的域名比如我的是 223722.xyz 点开 —— 右侧出现面板 ——点Nameservers &amp; DNS —— Nameservers 那一栏，点Change —— 选Custom nameservers ——把默认的两个DNS改成如下两个<br> charles.ns.cloudflare.com ，kim.ns.cloudflare.com 这两个是cloudflare提供的DNS 非常关键的步骤，—— 点Save  nameserver settings（右下角），可以推出spaceship网页了，后续用不到。</p><h3 id="2在cloudflare创建-pages"><a href="#2在cloudflare创建-pages" class="headerlink" title="2在cloudflare创建 pages"></a>2在cloudflare创建 pages</h3><p> 注册，登录，进入到账户主页,边框功能菜单栏在左侧，点计算和AI  —— 选 Workers 和 Pages —— 点右上角的 创建应用 —— 开始使用页面（默认是Workers） 选Pages —— 选导入Git存储库 ——绑定GitHub账户，按提示即可完成，非常简单，此步骤只需做一次，后续不需要 —— 此页面会显示你在github的所有仓库，选择一个存储库即可，然后点右下角的 开始设置 ,后续有分支的选择，我这里选的是gh-pages 这个分支，当然也不需要构建命令，输出目录，框架预设等，留空即可。——最后点右下角 保存并部署，几分钟即可部署完，成功后，提示，您可以在项目名(比如我的 hskt.pages.dev)预览项目。</p><h3 id="3在cloudflare-pages中添加自定义域名"><a href="#3在cloudflare-pages中添加自定义域名" class="headerlink" title="3在cloudflare pages中添加自定义域名"></a>3在cloudflare pages中添加自定义域名</h3><p> 回到cloudflare账户主页，点右上角 添加——连接域 ——输入现有域 223722.xyz —— 点 继续<br> 在上述步骤中找到workers和pages页面，可以看到我们的 pages项目，点开 —— 默认是部署需点 自定义域  —— 设置自定义域  ——  添加自定义域 比如我的 223722.XYZ即可其他选项默认 —— 点 继续 —— 点 选择计划Free us0（白嫖） —— 最后一步，点右上角的DNS记录，—— 点 添加记录，两条分别是，类型全部选CNAME，名称一个是@ ，IPV4地址，填项目的地址，比如workflows5.pages.dev ；另一条记录，名称输入wwww，ipv4输入223722.xyz ；这样的好处是无论你输入223722.xyz还是<span class="exturl" data-url="aHR0cDovL3d3dy4yMjM3MjIueHl66YO96Lez6L2s5YiwMjIzNzIyLnh5eizku6XkuIrorr7nva7lrozmr5UuLw==">www.223722.xyz都跳转到223722.xyz,以上设置完毕。<i class="fa fa-external-link-alt"></i></span></p><h3 id="4具体项目中添加域名"><a href="#4具体项目中添加域名" class="headerlink" title="4具体项目中添加域名"></a>4具体项目中添加域名</h3><p> 回到workers和pages页面，点开你的项目，默认是部署选项，点自定义域 ——点 设置自定义域 ——域：输入223722.xyz，点继续 ——确认新DNS记录页面，点激活域，会自动进行初始化，显示正在验证待完成后显示绿色的活动两个字即可通过域名访问你的项目。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;域名绑定博客网站网址cloudflarePages教程&quot;&gt;&lt;a href=&quot;#域名绑定博客网站网址cloudflarePages教程&quot; class=&quot;headerlink&quot; title=&quot;域名绑定博客网站网址cloudflarePages教程&quot;&gt;&lt;/a&gt;域名绑定博</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gitee的仓库镜像管理功能教程</title>
+    <link href="https://223722.xyz/gitee%E7%9A%84%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E6%95%99%E7%A8%8B/"/>
+    <id>https://223722.xyz/gitee%E7%9A%84%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E6%95%99%E7%A8%8B/</id>
+    <published>2025-11-09T15:41:12.000Z</published>
+    <updated>2025-11-22T17:00:07.442Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ggitee的仓库镜像管理功能教程"><a href="#ggitee的仓库镜像管理功能教程" class="headerlink" title="ggitee的仓库镜像管理功能教程"></a>ggitee的仓库镜像管理功能教程</h2><p>gitee pull github ，就是gitee管理管理github的仓库，把gitee代码拉取到github上，解决github访问受限的问题，前提是先绑定github账号，只有自己的账号才可以有这个功能。</p><h3 id="1、gitee创建仓库"><a href="#1、gitee创建仓库" class="headerlink" title="1、gitee创建仓库"></a>1、gitee创建仓库</h3><p>登录自己的仓库点右上角的加号，新建仓库——右上角点击导入——点导入GitHub仓库（不要选默认的从URL导入）——待页面跳转后，选择需要管理的仓库，点导入,过几秒到几分钟不等即可查看仓库，就跟自己创建的仓库一模一样了。</p><h3 id="2、github创建Personal-access-tokens-个人令牌，后续gitee那边需要用"><a href="#2、github创建Personal-access-tokens-个人令牌，后续gitee那边需要用" class="headerlink" title="2、github创建Personal access tokens(个人令牌，后续gitee那边需要用)"></a>2、github创建Personal access tokens(个人令牌，后续gitee那边需要用)</h3><p>登录github账号———点右上角自己的头像———点Settings（这个是整个账号而不是某个项目的设置）——页面跳转，点左侧的边框，往下拉，最底下的Developer settings——Personal access tokens——Tokens(classic)——右上角Generate new token ——选Generate new token(classic)<br>跳转到New personal access token(classic)页面：<br>Note： 随便填，整个类似给它起个名，<br>Expiration :有效期，默认是30天，我建议直接选No expiration （永不过期）<br>repo:打勾 repo (全选)<br>wrokflow: 打勾<br>admin:repo_hook:里面两项全选<br>总共就选择这三个即可，其他暂时不用管，点Generate token,等待页面跳转，此时会出现非常重要的信息，就是一窜代码以ghp_后面一堆字符串 ,这个复制下来，粘贴到记事本中，因为这个页面一旦消失，这个代码也将永久消失，切记，后续gitee那边要用，把它起名github_token_code .</p><h3 id="3、gitee配置仓库镜像管理功能token"><a href="#3、gitee配置仓库镜像管理功能token" class="headerlink" title="3、gitee配置仓库镜像管理功能token"></a>3、gitee配置仓库镜像管理功能token</h3><p>进入刚才利用 导入github仓库 功能创建的仓库，点管理（是这个仓库的管理而不是整个账户的管理）——左侧点 仓库镜像管理 ——右上角点 添加镜像——选push G--猫 （默认的，如果不是默认的，记得选它） —— 私人令牌 ，就是填刚才的github_token_code —— 点 添加。<br>成功后，每次修改代码完 点仓库镜像管理，右侧就会有个正在更新的灰色文字，是自动的，不需要手动跟新。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;ggitee的仓库镜像管理功能教程&quot;&gt;&lt;a href=&quot;#ggitee的仓库镜像管理功能教程&quot; class=&quot;headerlink&quot; title=&quot;ggitee的仓库镜像管理功能教程&quot;&gt;&lt;/a&gt;ggitee的仓库镜像管理功能教程&lt;/h2&gt;&lt;p&gt;gitee pull</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
