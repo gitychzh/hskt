@@ -1,16 +1,20 @@
 /* Muse 横向菜单 - 强制手机端也横向排列 */
 @media screen and (max-width: 768px)
-  .menu{
-    flex-direction: row !important; //强制横向
-    flex-wrap: nowwrap; //小屏幕宽度不足时强制横向，关键
-    justify-content: center; //居中显示菜单项
-  }
-//保证菜单项不换行
-  .menu li {
-    //margin-left: 8px !important
-    margin-right: 8px !important
+ .site-nav-mobile {
+    display: none !important
+
+  .menu {
+    display: flex !important
+    flex-direction: row !important
+    flex-wrap: nowrap !important
+    overflow-x: auto !important
     white-space: nowrap !important
-  }
+    -webkit-overflow-scrolling: touch
+
+  .menu li {
+    margin: 0 4px !important
+    white-space: nowrap !important
+
 /* 返回顶部按钮容器透明 */
 .back-to-top {
   background: transparent !important
