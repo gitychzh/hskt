@@ -1,3 +1,15 @@
+/* 返回顶部按钮容器透明 */
+.back-to-top {
+  background: transparent !important
+  box-shadow: none !important   // 去掉按钮阴影
+  border: none !important        // 有些 scheme 会有边框
+}
+/* 箭头颜色可自定义（保持可见） */
+.back-to-top .fa {
+  color: #d8c47f !important      // 护眼暗黄色（与你三条杠颜色一致）
+  opacity: 0.9
+}
+
 /* 让 Muse 左侧菜单按钮透明，不挡住文章 */
 .sidebar-toggle {
   background: transparent !important;
@@ -5,7 +17,7 @@
 }
 /* 内部三条横线的颜色（可自行修改，例如绿色 #2ecc71） */
 .toggle-line {
-  background: #ccbc2eff !important;
+  background: #d8c47f !important;
   
 }
 /* 修改左上角 "红薯课堂" 的颜色 */
