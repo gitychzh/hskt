@@ -17,10 +17,10 @@ custom_file_path:
 # ====================== Scheme Settings ====================== #
 # ============================================================= #
 
-# scheme: Muse
+scheme: Muse
 # scheme: Mist
 # scheme: Pisces
-scheme: Gemini
+# scheme: Gemini
 
 darkmode: true
 
@@ -119,8 +119,9 @@ sidebar:
   offset: 12
 
 avatar:
-  url: /images/next.png
-  rounded: true
+  # url: /images/next.png
+  url: /img/logo_红薯课堂.png
+  rounded: false
 
 social:
   GitHub: https://github.com/gitychzh/hskt || fab fa-github
@@ -285,3 +286,4 @@ local_search:
 vendors:
   internal: local
   plugins: cdnjs
+

@@ -1,28 +1,43 @@
+/* 修改左上角 "红薯课堂" 的颜色 */
+.site-title {
+  color: #cc6d2eff !important
+}
+/* 修改左上角 "一起学习，一起进步" 的颜色 */
+.site-subtitle {
+  color: #2ecc71 !important
+}
+//设置左上角长方形的背景色background: #2eccccff 
+.site-brand-container{
+  background: url('/img/烤红薯.png');
+  background-size: cover;
+  }
+// 文字居中
 .text-center {
   text-align: center;
 }
 
+/* 作者头像背景白色 */
 .site-author-image {
   background: white;
   background-clip: content-box;
 }
 
+// 侧边栏按钮样式
 .sidebar .sidebar-button {
   &:not(:last-child) {
     margin-bottom: 15px;
   }
 
   a {
-    button($orange);
+    button($orange);  // 使用 orange 主题色
     border: 1px solid $orange;
     border-radius: 4px;
-    // To make line-height in button mixin work
-    display: inline-block;
 
     .fa, .fab, .far, .fas {
-      margin-right: 5px;
+      margin-right: 5px; // 图标与文字距离
     }
 
+    // Pisces / Gemini 特殊布局
     if (($scheme == 'Pisces') or ($scheme == 'Gemini')) {
       border: 0;
       color: $orange;
