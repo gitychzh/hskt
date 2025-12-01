@@ -112,8 +112,8 @@ menu_settings:
 # ============================================================= #
 
 sidebar:
-  position: left 
-  # position: right
+  # position: left 
+  position: right
   display: post
   # display: always
   padding: 18
