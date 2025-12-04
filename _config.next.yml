@@ -42,6 +42,9 @@ creative_commons:
 
 menu:
   home: / || fa fa-bell
+  categories: /categories || fa fa-th-list # 分类页面
+  tags: /tags/ || fa fa-tags
+  archives: /archives/ || fa fa-archive
 
   Docs:
     default: /docs/ || fa fa-book
@@ -94,7 +97,7 @@ menu:
       Front Matter: /front-matter.html || fa fa-edit
 
     Troubleshooting: /troubleshooting.html || fa fa-life-ring
-  archives: /archives/ || fa fa-archive
+  
   #sitemap: /sitemap.xml || fa fa-sitemap
   # commonweal: /404/ || fa fa-heartbeat
   # 404: /404/ || fa fa-heartbeat

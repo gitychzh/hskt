@@ -1,6 +1,8 @@
 ---
 title: gitee的仓库镜像管理功能教程
 date: 2025-11-09 23:41:12
+categories:
+  - hexo教程
 tags:
 ---
 ## ggitee的仓库镜像管理功能教程 

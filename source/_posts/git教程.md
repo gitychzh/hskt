@@ -1,6 +1,8 @@
 ---
 title: git教程
 date: 2025-11-13 23:43:46
+categories:
+  - git教程
 tags:
 ---
 ## 查看日志
