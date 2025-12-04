@@ -94,13 +94,11 @@ menu:
       Front Matter: /front-matter.html || fa fa-edit
 
     Troubleshooting: /troubleshooting.html || fa fa-life-ring
-
-  Plugins: /plugins/ || fa fa-flask
   archives: /archives/ || fa fa-archive
   #sitemap: /sitemap.xml || fa fa-sitemap
   # commonweal: /404/ || fa fa-heartbeat
   # 404: /404/ || fa fa-heartbeat
-  测试标题: /test_menu/
+  
 
 menu_settings:
   icons: true
