@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5AUIVYTbHIAuz-eQtxSfZbWW5eg9_EVZMSQycIuXrG0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inconsolata:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"223722.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.26.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="环境搭建git下载与安装下载git ，安装就直接下一步即可，注意环境变量。验证是否安装正确 git -v 显示版本号就表示成功 node下载与安装下载node,点get node.js,选择LTS（长期维护的版本）最新版，当前是V22.21.1验证是否安装正确 node -v 显示版本号就表示成功 安装Hexo所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。 npm install">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建博客">
+<meta property="og:url" content="https://223722.xyz/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="红薯课堂">
+<meta property="og:description" content="环境搭建git下载与安装下载git ，安装就直接下一步即可，注意环境变量。验证是否安装正确 git -v 显示版本号就表示成功 node下载与安装下载node,点get node.js,选择LTS（长期维护的版本）最新版，当前是V22.21.1验证是否安装正确 node -v 显示版本号就表示成功 安装Hexo所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。 npm install">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-01T05:40:21.000Z">
+<meta property="article:modified_time" content="2025-12-04T15:28:07.348Z">
+<meta property="article:author" content="红薯">
+<meta property="article:tag" content="tags_使用hexo搭建博客">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://223722.xyz/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://223722.xyz/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/","path":"使用hexo搭建博客教程/","title":"使用hexo搭建博客"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用hexo搭建博客 | 红薯课堂</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43861RVV8R"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-43861RVV8R","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js","integrity":"sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="/js/third-party/tags/wavedrom.js" defer></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="红薯课堂" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">红薯课堂</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一起学习一起进步</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-bell fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories" rel="section"><i class="fa fa-th-list fa-fw"></i>分类<span class="badge">2</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">2</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">git下载与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">node下载与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">使用hexo创建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-%E5%88%9B%E5%BB%BA-%E9%A1%B9%E7%9B%AE%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%B8%A4%E4%B8%AA%E6%96%B9%E5%BC%8F%EF%BC%8C%E6%8E%A8%E8%8D%90%E7%AC%AC%E4%BA%8C%E7%A7%8D"><span class="nav-number">2.1.</span> <span class="nav-text">初始化(创建)项目有以下两个方式，推荐第二种</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo-%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E8%AF%B7%E6%89%A7%E8%A1%8C%E4%B8%8B%E5%88%97%E5%91%BD%E4%BB%A4%EF%BC%8CHexo-%E5%B0%86%E4%BC%9A%E5%9C%A8%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E6%96%B0%E5%BB%BA%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%96%87%E4%BB%B6%E3%80%82"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E5%9C%A8%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E5%B0%B1%E6%98%AF%E9%A1%B9%E7%9B%AE%E5%90%8D%EF%BC%8C%E6%B3%A8%E6%84%8F%E6%AD%A4%E6%96%87%E4%BB%B6%E5%A4%B9%E5%BF%85%E9%A1%BB%E4%B8%BA%E7%A9%BA%EF%BC%8C%E8%BF%90%E8%A1%8C%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-number">2.1.2.</span> <span class="nav-text">推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%EF%BC%8C%E5%B0%B1%E6%98%AF%E9%A1%B9%E7%9B%AE%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84package-json%E9%87%8C%E7%9A%84dependencies%E9%87%8C%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">2.2.</span> <span class="nav-text">安装依赖，就是项目根目录下的package.json里的dependencies里的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0%EF%BC%88%E5%8D%9A%E5%AE%A2%EF%BC%89%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%9C%A8source-posts%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA-md-%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E5%88%9B%E5%BB%BA"><span class="nav-number">2.3.</span> <span class="nav-text">写文章（博客），可以在source&#x2F;_posts目录下手动创建&quot;.md&quot;的文件，也可以通过命令创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98-%E4%BB%A5-butterfly-%E4%B8%BA%E4%BE%8B"><span class="nav-number">2.4.</span> <span class="nav-text">安装主题(以 butterfly 为例)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8A%E5%91%BD%E4%BB%A4%E4%BC%9A%E6%8A%8A%E4%BB%93%E5%BA%93butterfly%E5%85%8B%E9%9A%86%E5%88%B0thems%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84butterfly%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%AD-%E5%B9%B6%E5%88%A0%E9%99%A4%E4%B8%BB%E9%A2%98%E9%87%8C%E7%9A%84-git%E4%B8%8E-github%E6%96%87%E4%BB%B6%E5%A4%B9%E3%80%82"><span class="nav-number">2.4.1.</span> <span class="nav-text">以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中 并删除主题里的.git与.github文件夹。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-Hexo-%E6%A0%B9%E7%9B%AE%E9%8C%84%E4%B8%8B%E7%9A%84-config-yml%EF%BC%8C%E6%8A%8A%E4%B8%BB%E9%A1%8C%E6%94%B9%E7%82%BA-butterfly"><span class="nav-number">2.4.2.</span> <span class="nav-text">修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BF%99%E4%B8%AA%E4%B8%BB%E9%A2%98%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E4%BE%9D%E8%B5%96"><span class="nav-number">2.4.3.</span> <span class="nav-text">安装这个主题所需要的依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E7%9A%84%E8%80%8C%E4%B8%8D%E6%98%AF%E4%B8%BB%E9%A2%98%E7%9A%84%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B-config-yml%E6%96%87%E4%BB%B6"><span class="nav-number">2.4.4.</span> <span class="nav-text">修改项目的而不是主题的根目录下_config.yml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E5%BB%BA%E8%AE%AE"><span class="nav-number">2.4.5.</span> <span class="nav-text">升级建议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E4%B8%8E%E9%A2%84%E8%A7%88"><span class="nav-number">2.5.</span> <span class="nav-text">项目本地编译与预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%B9%B6push%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93"><span class="nav-number">2.6.</span> <span class="nav-text">创建远程仓库并push上传到远端仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github-%E6%B3%A8%E5%86%8C-%E7%99%BB%E5%BD%95-%EF%BC%8C%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%EF%BC%8C%E7%82%B9New-repository-%E8%BE%93%E5%85%A5%E4%BB%93%E5%BA%93%E5%90%8D%EF%BC%8C%E5%85%B6%E4%BB%96%E7%95%99%E7%A9%BA%EF%BC%8C%E4%BB%A5%E4%B8%BAhskt%E4%B8%BA%E4%BE%8B"><span class="nav-number">2.6.1.</span> <span class="nav-text">github 注册 登录 ，创建仓库，点New repository ,输入仓库名，其他留空，以为hskt为例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E8%AE%B0%E5%BE%97%E5%9C%A8%E6%9C%AB%E5%B0%BE-%E5%8A%A0-%E7%82%B9-%E8%A1%A8%E7%A4%BA%E5%9C%A8%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%E4%B8%8B%E8%BD%BD%E8%B5%84%E6%BA%90%E3%80%82"><span class="nav-number">2.6.2.</span> <span class="nav-text">git 克隆仓库的时候，记得在末尾 加 点 . 表示在当前目录下下载资源。</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="红薯"
+      src="/img/logo_%E7%BA%A2%E8%96%AF%E8%AF%BE%E5%A0%82.png">
+  <p class="site-author-name" itemprop="name">红薯</p>
+  <div class="site-description" itemprop="description">涵盖中小学到成人教育，包括计算机编程、PLC自动化、python、js、网页设计、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dpdHljaHpoL2hza3Q=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gitychzh&#x2F;hskt"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://223722.xyz/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/logo_%E7%BA%A2%E8%96%AF%E8%AF%BE%E5%A0%82.png">
+      <meta itemprop="name" content="红薯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="红薯课堂">
+      <meta itemprop="description" content="涵盖中小学到成人教育，包括计算机编程、PLC自动化、python、js、网页设计、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用hexo搭建博客 | 红薯课堂">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用hexo搭建博客<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dpdHljaHpoL2hza3QvZWRpdC9tYWluL3NvdXJjZS9fcG9zdHMv5L2/55SoaGV4b+aQreW7uuWNmuWuouaVmeeoiy5tZA==" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-01 13:40:21" itemprop="dateCreated datePublished" datetime="2025-11-01T13:40:21+08:00">2025-11-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hexo%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">hexo教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="git下载与安装"><a href="#git下载与安装" class="headerlink" title="git下载与安装"></a>git下载与安装</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9kb3dubG9hZC93aW4=">下载git<i class="fa fa-external-link-alt"></i></span> ，安装就直接下一步即可，注意环境变量。<br>验证是否安装正确</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git -v</span><br></pre></td></tr></table></figure>
+<p>显示版本号就表示成功</p>
+<h3 id="node下载与安装"><a href="#node下载与安装" class="headerlink" title="node下载与安装"></a>node下载与安装</h3><p><span class="exturl" data-url="aHR0cDovL25vZGVqcy5vcmcv">下载node<i class="fa fa-external-link-alt"></i></span>,点get node.js,选择LTS（长期维护的版本）最新版，当前是V22.21.1<br>验证是否安装正确</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>显示版本号就表示成功</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>验证是否安装正确</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<p>显示版本号就表示成功</p>
+<h2 id="使用hexo创建项目"><a href="#使用hexo创建项目" class="headerlink" title="使用hexo创建项目"></a>使用hexo创建项目</h2><h3 id="初始化-创建-项目有以下两个方式，推荐第二种"><a href="#初始化-创建-项目有以下两个方式，推荐第二种" class="headerlink" title="初始化(创建)项目有以下两个方式，推荐第二种"></a>初始化(创建)项目有以下两个方式，推荐第二种</h3><h4 id="安装-Hexo-完成后，请执行下列命令，Hexo-将会在指定文件夹中新建所需要的文件。"><a href="#安装-Hexo-完成后，请执行下列命令，Hexo-将会在指定文件夹中新建所需要的文件。" class="headerlink" title="安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。"></a>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h4 id="推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令"><a href="#推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令" class="headerlink" title="推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令"></a>推荐在资源管理器中创建一个文件夹，文件夹名就是项目名，注意此文件夹必须为空，运行如下命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init .</span><br></pre></td></tr></table></figure>
+<p>注意，结尾必须有一个&quot; . &quot;,英文的点,表示在当前目录下创建项目。<br>初始化后，您的项目文件夹将如下所示：</p>
+<h3 id="安装依赖，就是项目根目录下的package-json里的dependencies里的内容"><a href="#安装依赖，就是项目根目录下的package-json里的dependencies里的内容" class="headerlink" title="安装依赖，就是项目根目录下的package.json里的dependencies里的内容"></a>安装依赖，就是项目根目录下的package.json里的dependencies里的内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h3 id="写文章（博客），可以在source-posts目录下手动创建-md-的文件，也可以通过命令创建"><a href="#写文章（博客），可以在source-posts目录下手动创建-md-的文件，也可以通过命令创建" class="headerlink" title="写文章（博客），可以在source&#x2F;_posts目录下手动创建&quot;.md&quot;的文件，也可以通过命令创建"></a>写文章（博客），可以在source&#x2F;_posts目录下手动创建&quot;.md&quot;的文件，也可以通过命令创建</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page --path about/me <span class="string">&quot;About me&quot;</span></span><br></pre></td></tr></table></figure>
+<p>以上命令会创建一个 source&#x2F;about&#x2F;me.md 文件，同时 Front Matter 中的 title 为 &quot;About me&quot;</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new index</span><br></pre></td></tr></table></figure>
+<p>这个命令会在source&#x2F;_posts目录下创建一个index.md的文件。</p>
+<h3 id="安装主题-以-butterfly-为例"><a href="#安装主题-以-butterfly-为例" class="headerlink" title="安装主题(以 butterfly 为例)"></a>安装主题(以 butterfly 为例)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<p>如果https的方式不行，就试试ssh的方式</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master git@github.com:jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<p>必须立刻解除绑定，否则会与工作流产生冲突，执行如下命令(已废除)如果未删除.git和.github文件夹就运行了，那就不许删除缓存了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">~~ git <span class="built_in">rm</span> -r --cached themes/butterfly~~</span><br></pre></td></tr></table></figure>
+<p>改为如下代码，作用是删除butterfly目录下的.git文件夹（注意这个是隐藏的）和.github文件夹，也可以不用代码，手动在资源管理器中删除。这样可以避免后续的workflows工作流自动部署的冲突。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf themes/butterfly/.git themes/butterfly/.github</span><br></pre></td></tr></table></figure>
+<h4 id="以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中-并删除主题里的-git与-github文件夹。"><a href="#以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中-并删除主题里的-git与-github文件夹。" class="headerlink" title="以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中 并删除主题里的.git与.github文件夹。"></a>以上命令会把仓库butterfly克隆到thems目录下的butterfly子目录中 并删除主题里的.git与.github文件夹。</h4><h4 id="修改-Hexo-根目錄下的-config-yml，把主題改為-butterfly"><a href="#修改-Hexo-根目錄下的-config-yml，把主題改為-butterfly" class="headerlink" title="修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly"></a>修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly</h4><p>theme: butterfly</p>
+<h4 id="安装这个主题所需要的依赖"><a href="#安装这个主题所需要的依赖" class="headerlink" title="安装这个主题所需要的依赖"></a>安装这个主题所需要的依赖</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure>
+<h4 id="修改项目的而不是主题的根目录下-config-yml文件"><a href="#修改项目的而不是主题的根目录下-config-yml文件" class="headerlink" title="修改项目的而不是主题的根目录下_config.yml文件"></a>修改项目的而不是主题的根目录下_config.yml文件</h4><p>1,cloudflare可以正常显示页面，github page不能正常显示的配置如下<br>url: <span class="exturl" data-url="aHR0cHM6Ly9naXR5Y2h6aC5naXRodWIuaW8vaHNrdDY=">https://gitychzh.github.io/hskt6<i class="fa fa-external-link-alt"></i></span><br>root: &#x2F;<br>2，github pages可以正常展示页面，cloudflare不能正常展示如下<br>url: <span class="exturl" data-url="aHR0cHM6Ly9naXR5Y2h6aC5naXRodWIuaW8v">https://gitychzh.github.io<i class="fa fa-external-link-alt"></i></span><br>root: &#x2F;hskt6 &#x2F;<br>3，hskt6换成你自己的项目名，暂时没有更好的办法解决这个问题，可以考虑建两个仓库，分别部署。</p>
+<h4 id="升级建议"><a href="#升级建议" class="headerlink" title="升级建议"></a>升级建议</h4><p>在 hexo 的根目錄創建一個文件 _config.butterfly.yml，並把主題目錄的 _config.yml 內容複製到 _config.butterfly.yml 去。注意，这个_config.butterfly.yml优先级比根目录下的_config.yml高，所以不用担心冲突。</p>
+<h3 id="项目本地编译与预览"><a href="#项目本地编译与预览" class="headerlink" title="项目本地编译与预览"></a>项目本地编译与预览</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+<p>以上命令，会清除缓存，并编译静态资源到public文件夹下，并生成一个<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo0MDAw55qE572R6aG15L6b5pys5Zyw6aKE6KeI">http://localhost:4000的网页供本地预览<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="创建远程仓库并push上传到远端仓库"><a href="#创建远程仓库并push上传到远端仓库" class="headerlink" title="创建远程仓库并push上传到远端仓库"></a>创建远程仓库并push上传到远端仓库</h3><h4 id="github-注册-登录-，创建仓库，点New-repository-输入仓库名，其他留空，以为hskt为例"><a href="#github-注册-登录-，创建仓库，点New-repository-输入仓库名，其他留空，以为hskt为例" class="headerlink" title="github 注册 登录 ，创建仓库，点New repository ,输入仓库名，其他留空，以为hskt为例"></a>github 注册 登录 ，创建仓库，点New repository ,输入仓库名，其他留空，以为hskt为例</h4><p>然后在本地执行如下命令(项目里执行)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init </span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M master</span><br><span class="line">git remote add origin git@github.com:gitychzh/hskt.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>也可以强制推送<br>git push -u origin master --force<br>第一次，以后就只需要git push即可 或者后面加--force</p>
+<h4 id="git-克隆仓库的时候，记得在末尾-加-点-表示在当前目录下下载资源。"><a href="#git-克隆仓库的时候，记得在末尾-加-点-表示在当前目录下下载资源。" class="headerlink" title="git 克隆仓库的时候，记得在末尾 加 点 . 表示在当前目录下下载资源。"></a>git 克隆仓库的时候，记得在末尾 加 点 . 表示在当前目录下下载资源。</h4>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/tags-%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># tags_使用hexo搭建博客</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/gitee%E7%9A%84%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E6%95%99%E7%A8%8B/" rel="next" title="gitee的仓库镜像管理功能教程">
+                  gitee的仓库镜像管理功能教程 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">红薯</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
