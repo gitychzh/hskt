@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="5AUIVYTbHIAuz-eQtxSfZbWW5eg9_EVZMSQycIuXrG0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inconsolata:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"223722.xyz","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.26.0","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="查看日志git log --oneline --pretty&#x3D;format:&quot;%h - %ad : %s&quot; --date&#x3D;format:&quot;%Y-%m-%d %H:%M:%S&quot;输出格式如下：8f86ff4 - 2025-11-12 01:41:32 : 新增搜索功能5af639d - 2025-11-10 02:45:04 : 202511">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git教程">
+<meta property="og:url" content="https://223722.xyz/git%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="红薯课堂">
+<meta property="og:description" content="查看日志git log --oneline --pretty&#x3D;format:&quot;%h - %ad : %s&quot; --date&#x3D;format:&quot;%Y-%m-%d %H:%M:%S&quot;输出格式如下：8f86ff4 - 2025-11-12 01:41:32 : 新增搜索功能5af639d - 2025-11-10 02:45:04 : 202511">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-13T15:43:46.000Z">
+<meta property="article:modified_time" content="2025-12-10T07:48:34.870Z">
+<meta property="article:author" content="红薯">
+<meta property="article:tag" content="git相关">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://223722.xyz/git%E6%95%99%E7%A8%8B/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://223722.xyz/git%E6%95%99%E7%A8%8B/","path":"git教程/","title":"git教程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>git教程 | 红薯课堂</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43861RVV8R"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-43861RVV8R","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js","integrity":"sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="/js/third-party/tags/wavedrom.js" defer></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="红薯课堂" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">红薯课堂</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一起学习一起进步</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-bell fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th-list fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a></li><li class="menu-item menu-item-rspresspage"><a href="/rspressPage/" rel="section"><i class="fa fa-newspaper fa-fw"></i>rspressPage</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97"><span class="nav-number">1.</span> <span class="nav-text">查看日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E5%88%B0%E6%9F%90%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%8C%E6%AF%94%E5%A6%82%E4%B8%8A%E9%9D%A2%E7%9A%84-8c00529%EF%BC%8C%E6%AD%A4%E5%91%BD%E4%BB%A4%E4%BC%9A%E5%88%A0%E9%99%A4%E6%AF%94%E5%AE%83%E6%99%9A%E6%8F%90%E4%BA%A4%E7%9A%84%E6%89%80%E6%9C%89%E8%8A%82%E7%82%B9%EF%BC%8C%E5%8F%AA%E4%BF%9D%E7%95%99%E4%B8%80%E4%B8%AA%E6%AF%94%E5%AE%83%E6%97%A9%E6%8F%90%E4%BA%A4%E7%9A%84%E8%8A%82%E7%82%B9%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">回退到某个节点，比如上面的 8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E5%88%B0%E4%B8%8A%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%8C%E6%88%96%E8%80%85%E4%B8%8A%E4%B8%8A%E4%B8%AA%E8%8A%82%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">回退到上一个节点，或者上上个节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E5%88%86%E6%94%AF%EF%BC%8C%E4%BB%A5%E4%B8%8A%E6%93%8D%E4%BD%9C%E5%BF%85%E9%A1%BB%E5%85%88%E5%BB%BA%E7%AB%8B%E5%88%86%E6%94%AF%EF%BC%8C%E4%BF%9D%E7%95%99%E4%B8%BB%E5%88%86%E6%94%AFmaster%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E5%88%86%E6%94%AF"><span class="nav-number">5.</span> <span class="nav-text">切换到新分支</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="红薯"
+      src="/img/logo_%E7%BA%A2%E8%96%AF%E8%AF%BE%E5%A0%82.png">
+  <p class="site-author-name" itemprop="name">红薯</p>
+  <div class="site-description" itemprop="description">涵盖中小学到成人教育，包括计算机编程、PLC自动化、python、js、网页设计、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dpdHljaHpoL2hza3Q=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gitychzh&#x2F;hskt"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://223722.xyz/git%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/logo_%E7%BA%A2%E8%96%AF%E8%AF%BE%E5%A0%82.png">
+      <meta itemprop="name" content="红薯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="红薯课堂">
+      <meta itemprop="description" content="涵盖中小学到成人教育，包括计算机编程、PLC自动化、python、js、网页设计、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="git教程 | 红薯课堂">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git教程<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dpdHljaHpoL2hza3QvZWRpdC9tYWluL3NvdXJjZS9fcG9zdHMvZ2l05pWZ56iLLm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-13 23:43:46" itemprop="dateCreated datePublished" datetime="2025-11-13T23:43:46+08:00">2025-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/git%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">git教程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/git%E6%95%99%E7%A8%8B/%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">基础教程</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h2><p>git log --oneline --pretty&#x3D;format:&quot;%h - %ad : %s&quot; --date&#x3D;format:&quot;%Y-%m-%d %H:%M:%S&quot;<br>输出格式如下：<br>8f86ff4 - 2025-11-12 01:41:32 : 新增搜索功能<br>5af639d - 2025-11-10 02:45:04 : 20251109，最后一次修改<br>8c00529 - 2025-11-09 23:35:48 : 来自本地跟新1<br>0dbf5a8 - 2025-11-09 14:21:42 : update source&#x2F;_posts&#x2F;第六篇博客.md.</p>
+<h2 id="回退到某个节点，比如上面的-8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。"><a href="#回退到某个节点，比如上面的-8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。" class="headerlink" title="回退到某个节点，比如上面的 8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。"></a>回退到某个节点，比如上面的 8c00529，此命令会删除比它晚提交的所有节点，只保留一个比它早提交的节点。</h2><p>git reset --hard 8c00529</p>
+<h2 id="回退到上一个节点，或者上上个节点"><a href="#回退到上一个节点，或者上上个节点" class="headerlink" title="回退到上一个节点，或者上上个节点"></a>回退到上一个节点，或者上上个节点</h2><p>git reset --hard head^<br>git reset --hard head^^</p>
+<h2 id="本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。"><a href="#本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。" class="headerlink" title="本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。"></a>本地新建分支，以上操作必须先建立分支，保留主分支master的完整性。</h2><p>git branch feature&#x2F;test-domain</p>
+<h2 id="切换到新分支"><a href="#切换到新分支" class="headerlink" title="切换到新分支"></a>切换到新分支</h2><p>git checkout feature&#x2F;test-domain<br>比如切换到master ,git checkout master</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git%E7%9B%B8%E5%85%B3/" rel="tag"># git相关</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98butterfly/" rel="prev" title="修改主题butterfly">
+                  <i class="fa fa-angle-left"></i> 修改主题butterfly
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/index/" rel="next" title="首页">
+                  首页 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">红薯</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
