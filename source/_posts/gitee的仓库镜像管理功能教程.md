@@ -2,8 +2,11 @@
 title: gitee的仓库镜像管理功能教程
 date: 2025-11-09 23:41:12
 categories:
-  - hexo教程
+  - 计算机
+  - git教程
+  - 仓库镜像
 tags:
+  - git相关
 ---
 ## ggitee的仓库镜像管理功能教程 
 gitee pull github ，就是gitee管理管理github的仓库，把gitee代码拉取到github上，解决github访问受限的问题，前提是先绑定github账号，只有自己的账号才可以有这个功能。

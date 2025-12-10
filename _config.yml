@@ -38,6 +38,7 @@ skip_render:
   - robots.txt
   - animate/*
   - highlight/*
+  - "rspressPage/**/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts

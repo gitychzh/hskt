@@ -3,7 +3,9 @@ title: 使用hexo搭建博客
 date: 2025-11-01 13:40:21
 tags: tags_使用hexo搭建博客
 categories:
+  - 计算机
   - hexo教程
+  - 博客搭建
 ---
 ## 环境搭建
 

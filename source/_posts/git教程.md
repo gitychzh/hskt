@@ -2,8 +2,11 @@
 title: git教程
 date: 2025-11-13 23:43:46
 categories:
+  - 计算机
   - git教程
+  - 基础教程
 tags:
+  - git相关
 ---
 ## 查看日志
 git log --oneline --pretty=format:"%h - %ad : %s" --date=format:"%Y-%m-%d %H:%M:%S"

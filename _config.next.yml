@@ -42,9 +42,10 @@ creative_commons:
 
 menu:
   home: / || fa fa-bell
-  categories: /categories || fa fa-th-list # 分类页面
+  categories: /categories/ || fa fa-th-list # 分类页面
   tags: /tags/ || fa fa-tags
   archives: /archives/ || fa fa-archive
+  rspressPage: /rspressPage/ || fa fa-newspaper
 
   Docs:
     default: /docs/ || fa fa-book

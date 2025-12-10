@@ -2,7 +2,9 @@
 title: 域名绑定cloudflarePages教程
 date: 2025-11-10 00:30:17
 categories:
+  - 计算机
   - hexo教程
+  - 域名绑定
 tags:
 ---
 ## 域名绑定博客网站网址cloudflarePages教程
