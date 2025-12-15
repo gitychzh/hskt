@@ -1,41 +1,121 @@
-name: Deploy Hexo to GH-Pages
+name: Deploy Hexo to External Pages Repository
 
 on:
   push:
-    branches:  # 当推送到main或master分支时触发，请根据你的仓库默认分支名修改修改来自gitee镜像模式3来自本地更新1
-        - main
+    branches:
+      - main
+    paths:
+      - 'source/**'
+      - 'themes/**'
+      - '_config.yml'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch:  # 允许手动触发
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 确保action有写入gh-pages分支的权限
+      contents: write
 
     steps:
-      # 1. 检出源代码
-      - name: Checkout Repository
+      # 1. 检出源代码（包含子模块）
+      - name: Checkout Repository with Submodules
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取所有历史，这对于某些Hexo主题/插件是必须的
+          fetch-depth: 0
+          submodules: 'recursive'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 2. 设置指定版本的Node.js
+      # 2. 设置Node.js环境
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.21.1' # 使用你指定的22.x大版本
-          cache: 'npm' # 缓存npm依赖，加快后续构建速度
+          node-version: '22.21.1'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
 
-      # 3. 安装依赖并构建
-      - name: Install and Build
-        run: |
-          npm ci --include=dev # 使用ci命令替代install，确保依赖版本与lock文件一致
-          npx hexo clean # 清理旧文件
-          npx hexo generate # 生成静态站点文件
-
-      # 4. 部署到gh-pages分支
-      - name: Deploy to GH-Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # 3. 缓存依赖加速构建
+      - name: Cache NPM Dependencies
+        uses: actions/cache@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # 使用内置的GITHUB_TOKEN，无需手动创建
-          publish_branch: gh-pages # 部署到的分支名
-          publish_dir: ./public # Hexo生成的静态文件目录
-          force_orphan: true # 确保gh-pages分支只保留最近一次部署的文件
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 4. 安装依赖并构建Hexo站点
+      - name: Install Dependencies and Build
+        run: |
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          
+          # 清理可能的缓存
+          npm cache clean --force
+          
+          # 安装依赖（使用ci确保一致性）
+          npm ci --include=dev
+          
+          # Hexo构建
+          npx hexo clean
+          npx hexo generate
+          
+          # 验证生成的文件
+          echo "=== Generated static files ==="
+          du -sh ./public
+          ls -la ./public | head -10
+          echo "============================="
+
+      # 5. 部署到外部hskt_pages仓库
+      - name: Deploy to hskt_pages Repository
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          # 使用部署密钥访问外部仓库（推荐方式）
+          deploy_key: ${{ secrets.HSKT_PAGES_DEPLOY_KEY }}
+          
+          # 外部仓库配置（请替换为你的用户名和仓库名）
+          external_repository: 你的用户名/hskt_pages
+          
+          # 发布配置
+          publish_branch: main          # 目标分支
+          publish_dir: ./public         # 源目录
+          
+          # 提交信息配置
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: |
+            Deploy from source repository
+            Commit: ${{ github.event.head_commit.message || github.sha }}
+            Triggered by: ${{ github.actor }}
+            Date: ${{ github.event.head_commit.timestamp }}
+          
+          # 部署策略
+          force_orphan: false           # 保留历史提交
+          keep_files: false             # 不保留旧文件
+          allow_empty_commit: false     # 没有变更时不提交
+          
+          # 调试信息
+          enable_jekyll: false          # GitHub Pages的Jekyll处理
+          cname: ''                     # 如有自定义域名请在此填写
+
+      # 6. 部署完成通知（可选）
+      - name: Deployment Status
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "✅ 部署成功！站点已更新到 hskt_pages 仓库。"
+            echo "📊 可以在 https://你的用户名.github.io/hskt_pages/ 访问"
+          else
+            echo "❌ 部署失败，请检查错误信息。"
+            exit 1
+          fi
+
+      # 7. 清理缓存（可选）
+      - name: Cleanup
+        if: always()
+        run: |
+          echo "清理工作空间..."
+          rm -rf node_modules
+          rm -rf ./.git
