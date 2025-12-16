@@ -12,6 +12,7 @@
 * :six_pointed_star: [Mist](https://theme-next.js.org/mist/)
 * :pisces: [Pisces](https://theme-next.js.org/pisces/)
 * :gemini: [Gemini](https://theme-next.js.org) (**Default**)
+*  重新部署一下
 
 ## Getting started
 
