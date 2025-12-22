@@ -1,4 +1,4 @@
-name: Deploy Hexo to Cloudflare Pages Repository
+name: Deploy Hexo to External Pages Repository
 
 on:
   push:
@@ -22,20 +22,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Hexo site (Cloudflare Pages config)
+      - name: Build Hexo site
         run: |
           npx hexo clean
-          npx hexo generate --config _config.yml,_config.gh.yml
+          npx hexo generate
           echo "Generated files:"
           ls -la public | head -20
 
-      - name: Deploy to hskt_gh_page repository
+      - name: Deploy to hskt_pages (gh-pages branch)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.ALL_REPOS_TOKEN }}
-          external_repository: gitychzh/hskt_gh_page
-          publish_branch: main
+          personal_token: ${{ secrets.HSKT_PAGES_TOKEN }}
+          external_repository: gitychzh/hskt_pages
+          publish_branch: gh-pages
           publish_dir: public
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
-          commit_message: "Deploy Hexo site (gh Pages)"
+          commit_message: "Deploy Hexo site from hskt1"
