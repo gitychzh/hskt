@@ -32,7 +32,7 @@ jobs:
       - name: Deploy to hskt_gh_page repository
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.ALL_REPOS_TOKEN }}
+          personal_token: ${{ secrets.hskt_gh_page_token }}
           external_repository: gitychzh/hskt_gh_page
           publish_branch: main
           publish_dir: public

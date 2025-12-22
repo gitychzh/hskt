@@ -18,7 +18,7 @@ timezone: Asia/Shanghai
 # language: en
 # timezone: UTC
 # URL
-url: https://hskt-pages.pages.dev #设配CF pages ,默认CF pages
+url: https://hskt_cf_page.pages.dev #设配CF pages ,默认CF pages
 root: /
 # url: https://gitychzh.github.io/hskt_pages #设配GH pages
 # root: /hskt_pages/
