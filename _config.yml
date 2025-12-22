@@ -20,7 +20,7 @@ timezone: Asia/Shanghai
 
 # URL
 url: https://gitychzh.github.io/hskt_pages #设配GH pages
-# root: /hskt_pages/
+root: /hskt_pages/
 # url: https://hskt-pages.pages.dev #设配CF pages
 # root: /
 # url: https://223722.xyz
