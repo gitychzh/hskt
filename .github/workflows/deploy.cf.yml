@@ -25,11 +25,11 @@ jobs:
       - name: Build Hexo site (Cloudflare Pages config)
         run: |
           npx hexo clean
-          npx hexo generate --config _config.yml,_config.cf.yml
+          npx hexo generate --config _config.yml,_config.gh.yml
           echo "Generated files:"
           ls -la public | head -20
 
-      - name: Deploy to hskt_cf_page repository
+      - name: Deploy to hskt_gh_page repository
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.ALL_REPOS_TOKEN }}
