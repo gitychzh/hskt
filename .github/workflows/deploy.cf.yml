@@ -33,9 +33,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.ALL_REPOS_TOKEN }}
-          external_repository: gitychzh/hskt_cf_page
+          external_repository: gitychzh/hskt_gh_page
           publish_branch: main
           publish_dir: public
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
-          commit_message: "Deploy Hexo site (Cloudflare Pages)"
+          commit_message: "Deploy Hexo site (gh Pages)"
