@@ -19,8 +19,10 @@ timezone: Asia/Shanghai
 # timezone: UTC
 
 # URL
-url: https://gitychzh.github.io #设配GH pages
-root: /hskt/
+# url: https://gitychzh.github.io #设配GH pages
+# root: /hskt/
+url: https://gitychzh.github.io/hskt #设配CF pages
+root: /
 # url: https://223722.xyz
 # root: /  
 permalink: :title/
