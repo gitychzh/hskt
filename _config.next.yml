@@ -46,6 +46,7 @@ menu:
   tags: /tags/ || fa fa-tags
   archives: /archives/ || fa fa-archive
   rspressPage: /rspressPage/ || fa fa-newspaper
+  计算机: /jsj/ || fa fa-laptop-code
 
   Docs:
     default: /docs/ || fa fa-book

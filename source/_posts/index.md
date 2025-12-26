@@ -33,3 +33,6 @@ type: "index"
 ---
 
 感谢你访问我的博客，记得关注我后续的更新！  
+## 超链接
+
+- [rsPress](https://rspress.rs/zh/guide/start/getting-started)
