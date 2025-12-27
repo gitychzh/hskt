@@ -43,7 +43,7 @@ skip_render:
   - highlight/*
   - "rspressPage/**/*"
   - "jsj/**/*"
-  - jsj/*
+  
 
 # Writing
 new_post_name: :title.md # File name of new posts
