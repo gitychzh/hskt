@@ -12,3 +12,4 @@ source/_backup/
 .deploy_git/
 scripts/
 pnpm-lock.yaml
+source/jsj/
