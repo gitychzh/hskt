@@ -11,7 +11,7 @@ type: "index"
 
 - [**hexo**](https://hexo.io/)：这个是个创建静态博客的框架
 - [**next**](https://theme-next.js.org/)：这是hexo的一个简约的主题
-- [**next_docs**](https://github.com/next-theme/theme-next-docs/)：这是next的docs文档站的仓库源码
+- [**next_docs**](https://github.com/next-theme/theme-next-docs/)：这是next的docs文档站的仓库源码[**下载**](https://github.com/next-theme/theme-next-docs/archive/refs/heads/master.zip)
 - [**rsPress**](https://rspress.rs/)：这是由字节跳动公司出的静态博客框架rsPress的官方网址
 
 ### 学科分类
@@ -31,6 +31,8 @@ type: "index"
 - [数学解题技巧](https://yourblog.com/posts/math-tips/)
 - [英语学习方法](https://yourblog.com/posts/english-tips/)
 ---
+
+
 ## 联系我
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px; margin-bottom: 40px;">
