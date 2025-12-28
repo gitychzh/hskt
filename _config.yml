@@ -41,7 +41,6 @@ skip_render:
   - robots.txt
   - animate/*
   - highlight/*
-  - "rspressPage/**/*"
   - "jsj/**/*"
   
 
