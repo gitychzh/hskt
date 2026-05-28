@@ -1,5 +1,6 @@
 ---
 title: 域名绑定cloudflarePages教程
+date: 2025-11-10
 ---
 
 

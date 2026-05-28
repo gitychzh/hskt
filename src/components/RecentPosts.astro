@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const recentPosts = posts
+  .sort((a, b) => {
+    const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+    const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+    return dateB - dateA;
+  })
+  .slice(0, 5);
+---
+
+<section class="recent-posts">
+  <h2 style="font-weight:700; color:var(--sl-color-gray-5); font-size:1.1rem; margin-bottom:0.75rem;">
+    最新文章
+  </h2>
+  <ul class="recent-posts-list">
+    {recentPosts.map((post) => (
+      <li class="recent-posts-item">
+        <span class="recent-posts-date">
+          {post.data.date
+            ? new Date(post.data.date).toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+              })
+            : ''}
+        </span>
+        <a class="recent-posts-title" href={`/blog/${post.id}/`}>
+          {post.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

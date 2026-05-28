@@ -1,0 +1,327 @@
+/* NexT Theme Style for Starlight */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  /* NexT color palette */
+  --sl-color-white: #fff;
+  --sl-color-gray-1: #f5f5f5;
+  --sl-color-gray-2: #e8e8e8;
+  --sl-color-gray-3: #ccc;
+  --sl-color-gray-4: #999;
+  --sl-color-gray-5: #666;
+  --sl-color-gray-6: #333;
+  --sl-color-gray-7: #222;
+  --sl-color-black: #1a1a1a;
+
+  /* NexT accent */
+  --sl-color-accent: #222;
+  --sl-color-accent-low: #555;
+  --sl-color-text: #333;
+  --sl-color-text-accent: #222;
+  --sl-color-bg: #fff;
+  --sl-color-bg-sidebar: #f5f5f5;
+  --sl-color-bg-card: #fff;
+  --sl-color-border: #e8e8e8;
+
+  /* NexT layout */
+  --sl-nav-height: 56px;
+  --sl-sidebar-width: 260px;
+
+  /* Font family - NexT uses Lato */
+  --sl-font-body: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --sl-font-heading: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --sl-font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] {
+  --sl-color-white: #222;
+  --sl-color-gray-1: #1a1a1a;
+  --sl-color-gray-2: #2a2a2a;
+  --sl-color-gray-3: #444;
+  --sl-color-gray-4: #666;
+  --sl-color-gray-5: #888;
+  --sl-color-gray-6: #ccc;
+  --sl-color-gray-7: #eee;
+  --sl-color-black: #f5f5f5;
+
+  --sl-color-accent: #eee;
+  --sl-color-accent-low: #aaa;
+  --sl-color-text: #ccc;
+  --sl-color-text-accent: #eee;
+  --sl-color-bg: #1a1a1a;
+  --sl-color-bg-sidebar: #222;
+  --sl-color-bg-card: #2a2a2a;
+  --sl-color-border: #333;
+}
+
+/* ===== Global Styles ===== */
+body {
+  font-family: var(--sl-font-body);
+  color: var(--sl-color-text);
+  background: var(--sl-color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Header / Navigation ===== */
+header {
+  background: var(--sl-color-bg) !important;
+  border-bottom: 1px solid var(--sl-color-border) !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04) !important;
+  transition: background 0.3s ease;
+}
+
+[data-theme='dark'] header {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background: var(--sl-color-bg-sidebar) !important;
+  border-right: 1px solid var(--sl-color-border) !important;
+  transition: background 0.3s ease;
+}
+
+.sidebar-tree a {
+  color: var(--sl-color-gray-5) !important;
+  transition: color 0.2s ease;
+}
+
+.sidebar-tree a:hover,
+.sidebar-tree a[aria-current='page'] {
+  color: var(--sl-color-text-accent) !important;
+}
+
+.sidebar-heading {
+  color: var(--sl-color-gray-4) !important;
+  font-weight: 400 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  max-width: 800px !important;
+}
+
+.main-content h1 {
+  font-weight: 700 !important;
+  color: var(--sl-color-text-accent) !important;
+  border-bottom: none !important;
+  margin-bottom: 1.5rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+.main-content h2 {
+  font-weight: 400 !important;
+  color: var(--sl-color-gray-5) !important;
+  margin-top: 2rem !important;
+  border-bottom: 1px solid var(--sl-color-border) !important;
+}
+
+.main-content h3 {
+  font-weight: 700 !important;
+  color: var(--sl-color-text) !important;
+}
+
+.main-content p {
+  color: var(--sl-color-gray-5) !important;
+  line-height: 1.9 !important;
+}
+
+.main-content a {
+  color: var(--sl-color-accent) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--sl-color-gray-3) !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.main-content a:hover {
+  border-bottom-color: var(--sl-color-accent) !important;
+}
+
+/* ===== Code blocks ===== */
+pre,
+code {
+  font-family: var(--sl-font-mono) !important;
+  background: var(--sl-color-gray-1) !important;
+}
+
+[data-theme='dark'] pre,
+[data-theme='dark'] code {
+  background: var(--sl-color-gray-2) !important;
+}
+
+/* ===== Card styling for homepage ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--sl-color-bg-card) !important;
+  border: 1px solid var(--sl-color-border) !important;
+  border-radius: 4px !important;
+  padding: 1.25rem !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+  border-color: var(--sl-color-gray-4) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ===== Recent Posts List ===== */
+.recent-posts-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.recent-posts-item {
+  display: flex !important;
+  align-items: baseline !important;
+  padding: 0.5rem 0 !important;
+  border-bottom: 1px solid var(--sl-color-border) !important;
+  gap: 1rem !important;
+}
+
+.recent-posts-date {
+  color: var(--sl-color-gray-4) !important;
+  font-size: 0.85rem !important;
+  font-family: var(--sl-font-mono) !important;
+  min-width: 5.5rem !important;
+  white-space: nowrap !important;
+}
+
+.recent-posts-title {
+  color: var(--sl-color-text-accent) !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+}
+
+.recent-posts-title:hover {
+  color: var(--sl-color-accent) !important;
+}
+
+/* ===== Hero section ===== */
+.hero {
+  text-align: center !important;
+  padding: 3rem 0 1rem !important;
+}
+
+.hero-tagline {
+  font-weight: 300 !important;
+  color: var(--sl-color-gray-5) !important;
+  font-size: 1.1rem !important;
+}
+
+.hero-image {
+  max-width: 120px !important;
+}
+
+.hero-actions {
+  display: flex !important;
+  gap: 0.75rem !important;
+  justify-content: center !important;
+  margin-top: 1.5rem !important;
+}
+
+/* ===== Giscus Comment Section ===== */
+.comment-section {
+  margin-top: 3rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid var(--sl-color-border) !important;
+}
+
+.comment-section-title {
+  font-weight: 700 !important;
+  color: var(--sl-color-gray-5) !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* ===== Pagination & Breadcrumbs ===== */
+.breadcrumb {
+  font-size: 0.8rem !important;
+  color: var(--sl-color-gray-4) !important;
+}
+
+/* ===== Table styling ===== */
+table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+th {
+  background: var(--sl-color-gray-1) !important;
+  font-weight: 700 !important;
+  border: 1px solid var(--sl-color-border) !important;
+}
+
+td {
+  border: 1px solid var(--sl-color-border) !important;
+}
+
+/* ===== Page footer ===== */
+footer.site-footer {
+  background: var(--sl-color-gray-1) !important;
+  border-top: 1px solid var(--sl-color-border) !important;
+  color: var(--sl-color-gray-4) !important;
+  text-align: center !important;
+  padding: 1.5rem !important;
+}
+
+[data-theme='dark'] footer.site-footer {
+  background: var(--sl-color-gray-2) !important;
+}
+
+/* ===== Pagination buttons ===== */
+.pagination-nav a {
+  border: 1px solid var(--sl-color-border) !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.pagination-nav a:hover {
+  border-color: var(--sl-color-accent) !important;
+  color: var(--sl-color-accent) !important;
+}
+
+/* ===== Search ===== */
+[data-is-search-modal] {
+  background: var(--sl-color-bg) !important;
+}
+
+/* ===== Blog-specific styling ===== */
+.blog-post-card {
+  border-bottom: 1px solid var(--sl-color-border) !important;
+  padding: 1.25rem 0 !important;
+  transition: background 0.2s ease !important;
+}
+
+.blog-post-date {
+  color: var(--sl-color-gray-4) !important;
+  font-size: 0.85rem !important;
+  font-family: var(--sl-font-mono) !important;
+}
+
+.blog-post-title {
+  font-weight: 700 !important;
+  color: var(--sl-color-text-accent) !important;
+  font-size: 1.25rem !important;
+}
+
+/* Smooth transitions for theme switch */
+* {
+  transition: background-color 0.3s ease, color 0.15s ease, border-color 0.3s ease;
+}

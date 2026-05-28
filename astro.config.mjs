@@ -2,11 +2,13 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://223722.xyz',
 	integrations: [
+		react(),
 		starlight({
 			title: '红薯课堂',
 			description:
@@ -65,6 +67,10 @@ export default defineConfig({
 					link: '/other/overview/',
 				},
 			],
+			customCss: ['./src/styles/next-theme.css'],
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 			plugins: [starlightBlog()],
 		}),
 	],

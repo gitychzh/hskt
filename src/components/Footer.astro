@@ -1,0 +1,38 @@
+---
+import EditLink from 'virtual:starlight/components/EditLink';
+import LastUpdated from 'virtual:starlight/components/LastUpdated';
+import Pagination from 'virtual:starlight/components/Pagination';
+import config from 'virtual:starlight/user-config';
+import { Icon } from '@astrojs/starlight/components';
+---
+
+<section class="comment-section">
+  <h3 class="comment-section-title">评论</h3>
+  <div class="giscus"></div>
+  <script is:inline src="https://giscus.app/client.js" data-repo="gitychzh/hskt" data-repo-id="" data-category="General" data-category-id="" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script>
+</section>
+
+<footer class="sl-flex">
+	<div class="meta sl-flex">
+		<EditLink />
+		<LastUpdated />
+	</div>
+	<Pagination />
+
+	{
+		config.credits && (
+			<a class="kudos sl-flex" href="https://starlight.astro.build">
+				<Icon name={'starlight'} /> {Astro.locals.t('builtWithStarlight.label')}
+			</a>
+		)
+	}
+</footer>
+
+<style>
+	@layer starlight.core {
+		footer {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+	}
+</style>
