@@ -236,20 +236,6 @@ code {
   margin-top: 1.5rem !important;
 }
 
-/* ===== Giscus Comment Section ===== */
-.comment-section {
-  margin-top: 3rem !important;
-  padding-top: 2rem !important;
-  border-top: 1px solid var(--sl-color-border) !important;
-}
-
-.comment-section-title {
-  font-weight: 700 !important;
-  color: var(--sl-color-gray-5) !important;
-  font-size: 0.9rem !important;
-  margin-bottom: 1rem !important;
-}
-
 /* ===== Pagination & Breadcrumbs ===== */
 .breadcrumb {
   font-size: 0.8rem !important;
