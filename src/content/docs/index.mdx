@@ -1,0 +1,43 @@
+---
+title: 红薯课堂
+description: 涵盖中小学到成人教育，包括计算机编程、PLC自动化、python、js、网页设计等多个学科的学习资源与教程。
+template: splash
+hero:
+  tagline: 涵盖中小学到成人教育，计算机编程、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。
+  image:
+    file: ../../assets/logo-light.png
+  actions:
+    - text: 博客文章
+      link: /blog/
+      variant: primary
+    - text: 计算机教程
+      link: /computer/overview/
+    - text: AutoX.js 文档
+      link: /autox/introduction/
+---
+
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 学科分类
+
+<CardGrid>
+  <Card title="计算机">
+    Python、JavaScript 编程、Git、Hexo 博客、C# 等技术学习与实战。
+  </Card>
+  <Card title="AutoX.js">
+    AutoX.js 自动化脚本开发文档，基础到进阶教程。
+  </Card>
+  <Card title="数学">
+    初中到高中的数学学习心得与资料。
+  </Card>
+  <Card title="英语">
+    英语学习资源与技巧提升。
+  </Card>
+  <Card title="物理">
+    从基础物理到高中物理的教学资料。
+  </Card>
+  <Card title="化学">
+    初中到高中的化学学习资料和心得。
+  </Card>
+</CardGrid>
