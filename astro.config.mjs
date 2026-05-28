@@ -10,7 +10,7 @@ export default defineConfig({
 		starlight({
 			title: '红薯课堂',
 			description:
-				'涵盖中小学到成人教育，包括计算机编程、PLC自动化、python、js、网页设计、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。',
+				'涵盖中小学到成人教育，包括计算机编程、python、js、网页设计、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。',
 			defaultLocale: 'root',
 			locales: {
 				root: {
@@ -57,27 +57,12 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'AutoX.js',
-					items: [
-						{ label: '简介', slug: 'autox/introduction' },
-						{
-							label: '基础',
-							items: [{ autogenerate: { directory: 'autox/basic' } }],
-						},
-						{
-							label: '进阶',
-							items: [{ autogenerate: { directory: 'autox/advanced' } }],
-						},
-						{
-							label: '修改扩展',
-							items: [{ autogenerate: { directory: 'autox/modification' } }],
-						},
-						{
-							label: 'NPM 模块',
-							items: [{ autogenerate: { directory: 'autox/npm' } }],
-						},
-						{ label: '常见问题', slug: 'autox/qa' },
-					],
+					label: '生物',
+					link: '/biology/overview/',
+				},
+				{
+					label: '其他',
+					link: '/other/overview/',
 				},
 			],
 			plugins: [starlightBlog()],
