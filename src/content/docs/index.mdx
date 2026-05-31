@@ -6,14 +6,6 @@ hero:
   tagline: 涵盖中小学到成人教育，计算机编程、数学、语文、英语、物理、化学、生物等多个学科的学习资源与教程。
   image:
     file: ../../assets/logo-light.png
-  actions:
-    - text: 博客文章
-      link: /blog/
-      variant: primary
-    - text: 计算机教程
-      link: /computer/overview/
-    - text: 生物
-      link: /biology/overview/
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -24,25 +16,25 @@ import RecentPosts from '../../components/RecentPosts.astro';
 ## 学科分类
 
 <CardGrid>
-  <Card title="计算机">
+  <Card title="计算机" link="/computer/overview/">
     Python、JavaScript 编程、Git、Hexo 博客、C# 等技术学习与实战。
   </Card>
-  <Card title="生物">
+  <Card title="生物" link="/biology/overview/">
     从初中到高中的生物学习心得与资料。
   </Card>
-  <Card title="数学">
+  <Card title="数学" link="/math/overview/">
     初中到高中的数学学习心得与资料。
   </Card>
-  <Card title="英语">
+  <Card title="英语" link="/english/overview/">
     英语学习资源与技巧提升。
   </Card>
-  <Card title="物理">
+  <Card title="物理" link="/physics/overview/">
     从基础物理到高中物理的教学资料。
   </Card>
-  <Card title="化学">
+  <Card title="化学" link="/chemistry/overview/">
     初中到高中的化学学习资料和心得。
   </Card>
-  <Card title="其他">
+  <Card title="其他" link="/other/overview/">
     日常知识的点点滴滴。
   </Card>
 </CardGrid>

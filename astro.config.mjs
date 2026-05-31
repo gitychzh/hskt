@@ -61,6 +61,22 @@ export default defineConfig({
 					link: '/biology/overview/',
 				},
 				{
+					label: '数学',
+					link: '/math/overview/',
+				},
+				{
+					label: '英语',
+					link: '/english/overview/',
+				},
+				{
+					label: '物理',
+					link: '/physics/overview/',
+				},
+				{
+					label: '化学',
+					link: '/chemistry/overview/',
+				},
+				{
 					label: '其他',
 					link: '/other/overview/',
 				},
