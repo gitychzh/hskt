@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  href: string;
+}
+
+const { title, href } = Astro.props;
+---
+
+<a href={href} class="clickable-card">
+  <article class="card-inner">
+    <p class="card-title">{title}</p>
+    <div class="card-body"><slot /></div>
+  </article>
+</a>
+
+<style>
+  .clickable-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card-inner {
+    border: 1px solid var(--sl-color-gray-5);
+    background-color: var(--sl-color-black);
+    padding: clamp(1rem, calc(0.125rem + 3vw), 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, calc(0.125rem + 1vw), 1rem);
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .clickable-card:hover .card-inner {
+    border-color: var(--sl-color-gray-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-title {
+    font-weight: 600;
+    font-size: var(--sl-text-h4);
+    color: var(--sl-color-white);
+    line-height: var(--sl-line-height-headings);
+    margin: 0;
+  }
+
+  .card-body {
+    margin: 0;
+    font-size: clamp(var(--sl-text-sm), calc(0.5rem + 1vw), var(--sl-text-body));
+    color: var(--sl-color-gray-3);
+  }
+
+  /* Color variants matching Starlight Card */
+  .clickable-card:nth-child(4n + 1) .card-inner {
+    border-left: 3px solid var(--sl-color-orange);
+  }
+  .clickable-card:nth-child(4n + 3) .card-inner {
+    border-left: 3px solid var(--sl-color-green);
+  }
+  .clickable-card:nth-child(4n + 4) .card-inner {
+    border-left: 3px solid var(--sl-color-red);
+  }
+  .clickable-card:nth-child(4n + 5) .card-inner {
+    border-left: 3px solid var(--sl-color-blue);
+  }
+</style>

@@ -8,33 +8,34 @@ hero:
     file: ../../assets/logo-light.png
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
 import RecentPosts from '../../components/RecentPosts.astro';
+import ClickableCard from '../../components/ClickableCard.astro';
 
 <RecentPosts />
 
 ## 学科分类
 
 <CardGrid>
-  <Card title="计算机" link="/computer/overview/">
+  <ClickableCard title="计算机" href="/computer/overview/">
     Python、JavaScript 编程、Git、Hexo 博客、C# 等技术学习与实战。
-  </Card>
-  <Card title="生物" link="/biology/overview/">
+  </ClickableCard>
+  <ClickableCard title="生物" href="/biology/overview/">
     从初中到高中的生物学习心得与资料。
-  </Card>
-  <Card title="数学" link="/math/overview/">
+  </ClickableCard>
+  <ClickableCard title="数学" href="/math/overview/">
     初中到高中的数学学习心得与资料。
-  </Card>
-  <Card title="英语" link="/english/overview/">
+  </ClickableCard>
+  <ClickableCard title="英语" href="/english/overview/">
     英语学习资源与技巧提升。
-  </Card>
-  <Card title="物理" link="/physics/overview/">
+  </ClickableCard>
+  <ClickableCard title="物理" href="/physics/overview/">
     从基础物理到高中物理的教学资料。
-  </Card>
-  <Card title="化学" link="/chemistry/overview/">
+  </ClickableCard>
+  <ClickableCard title="化学" href="/chemistry/overview/">
     初中到高中的化学学习资料和心得。
-  </Card>
-  <Card title="其他" link="/other/overview/">
+  </ClickableCard>
+  <ClickableCard title="其他" href="/other/overview/">
     日常知识的点点滴滴。
-  </Card>
+  </ClickableCard>
 </CardGrid>
